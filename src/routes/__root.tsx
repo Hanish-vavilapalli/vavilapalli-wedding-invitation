@@ -90,7 +90,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content: "Traditional Telugu wedding invitation — 16 December 2026, Muhurtham 8:03 AM.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://vavilapallikalyanotsavam.live/og-image.png" },
+      { property: "og:image:secure_url", content: "https://vavilapallikalyanotsavam.live/og-image.png" },
+      { property: "og:image:type", content: "image/png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "వావిలపల్లి వారి కళ్యాణ మహోత్సవం — Gireesh & Sri Varsha" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://vavilapallikalyanotsavam.live/og-image.png" },
     ],
     links: [
       {
