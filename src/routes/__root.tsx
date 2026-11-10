@@ -78,13 +78,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Gireesh ❤️ Sri Varsha — Wedding Invitation" },
+      { title: "{GV} Gireesh ❤️ Sri Varsha — Wedding Invitation" },
       {
         name: "description",
         content:
           "Traditional Telugu wedding invitation of Gireesh and Sri Varsha — Wednesday, 16 December 2026, Muhurtham 8:03 AM, Komiri Village, Vizianagaram District.",
       },
-      { property: "og:title", content: "Gireesh ❤️ Sri Varsha — Wedding Invitation" },
+      { property: "og:title", content: "{GV} Gireesh ❤️ Sri Varsha — Wedding Invitation" },
       {
         property: "og:description",
         content: "Traditional Telugu wedding invitation — 16 December 2026, Muhurtham 8:03 AM.",
@@ -97,9 +97,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.svg?v=2", type: "image/svg+xml" },
-      { rel: "alternate icon", href: "/favicon.ico?v=2", type: "image/x-icon" },
-      { rel: "apple-touch-icon", href: "/favicon.svg?v=2" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "icon", href: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { rel: "alternate icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "apple-touch-icon", href: "/favicon.svg" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

@@ -1,5 +1,4 @@
 import { assets, wedding } from "../config";
-import { MonogramGV } from "../MonogramGV";
 
 import { Kicker, Ornament, Telugu } from "./shared";
 
@@ -8,13 +7,8 @@ export function WelcomeSection() {
   return (
     <section
       id="welcome"
-      className="relative flex w-full flex-col items-center justify-center px-4 pt-20 pb-10 sm:pt-28 sm:pb-14 text-center"
+      className="relative flex w-full flex-col items-center justify-center px-4 pt-24 pb-10 sm:pt-32 sm:pb-14 text-center"
     >
-      {/* Modern couple monogram logo */}
-      <div className="mb-4 sm:mb-5">
-        <MonogramGV size="md" />
-      </div>
-
       <img
         src={assets.ganesha}
         alt="Lord Ganesha"
