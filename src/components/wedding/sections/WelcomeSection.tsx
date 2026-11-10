@@ -1,0 +1,56 @@
+import { assets, wedding } from "../config";
+
+import { Kicker, Ornament, Telugu } from "./shared";
+
+/** SECTION 1 — Traditional opening with Lord Ganesha. */
+export function WelcomeSection() {
+  return (
+    <section
+      id="welcome"
+      className="relative flex w-full flex-col items-center justify-center px-4 pt-24 pb-10 sm:pt-32 sm:pb-14 text-center"
+    >
+      <img
+        src={assets.ganesha}
+        alt="Lord Ganesha"
+        loading="eager"
+        className="h-auto w-24 sm:w-28 drop-shadow-[0_8px_16px_oklch(0.4_0.08_65/0.25)]"
+      />
+      <Telugu className="mt-4 text-base sm:text-lg font-medium text-primary">
+        {wedding.greetingTelugu}
+      </Telugu>
+      <Ornament />
+      {/* Grand Cinematic Movie Title Card Image: వావిలపల్లి వారి కళ్యాణ మహోత్సవం */}
+      <div className="relative my-4 sm:my-6 flex w-full max-w-xl items-center justify-center select-none overflow-visible">
+        {/* Gentle divine golden aura glow */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute size-64 sm:size-80 rounded-full opacity-35 blur-3xl"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(245,158,11,0.5) 0%, rgba(217,119,6,0.2) 45%, transparent 70%)",
+          }}
+        />
+        <img
+          src={assets.titleCinematic}
+          alt="వావిలపల్లి వారి కళ్యాణ మహోత్సవం"
+          loading="eager"
+          className="anim-cinematic-title relative z-10 h-auto w-full max-w-[360px] sm:max-w-[480px] md:max-w-[540px] object-contain filter drop-shadow-[0_14px_28px_rgba(180,83,9,0.22)]"
+        />
+      </div>
+      <Kicker>{wedding.heading}</Kicker>
+      <h1 className="mt-2 text-3xl sm:text-5xl font-semibold tracking-wide text-primary">
+        Gireesh <span className="text-vermilion">❤</span> Sri Varsha
+      </h1>
+      <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
+        Together with our families, we joyfully invite you to bless us on our
+        wedding day.
+      </p>
+      <div className="anim-scroll-hint mt-8 flex flex-col items-center gap-1 text-gold">
+        <span className="text-[10px] uppercase tracking-[0.3em]">Scroll to Explore</span>
+        <span aria-hidden="true" className="text-lg">
+          ⌄
+        </span>
+      </div>
+    </section>
+  );
+}

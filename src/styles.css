@@ -1,0 +1,510 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — Traditional Andhra / South Indian temple wedding.
+ * Palette from the brief: ivory #F5EEDC, paper #F8F1E3, green #45632F,
+ * deep green #294B2D, gold #B18A45, marigold #E99A24, yellow #F4C52E,
+ * vermilion #A93B2C, brown #795B3D (converted to oklch).
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-marigold: var(--marigold);
+  --color-harvest: var(--harvest);
+  --color-vermilion: var(--vermilion);
+  --color-deep: var(--deep);
+  --color-brown: var(--brown);
+  --font-display: "Cormorant Garamond", "Georgia", serif;
+  --font-telugu: "Noto Serif Telugu", "Cormorant Garamond", serif;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(0.954 0.026 95);
+  --foreground: oklch(0.33 0.07 152);
+  --card: oklch(0.958 0.023 92);
+  --card-foreground: oklch(0.33 0.07 152);
+  --popover: oklch(0.958 0.023 92);
+  --popover-foreground: oklch(0.33 0.07 152);
+  --primary: oklch(0.44 0.095 145);
+  --primary-foreground: oklch(0.958 0.023 92);
+  --secondary: oklch(0.925 0.035 92);
+  --secondary-foreground: oklch(0.38 0.08 150);
+  --muted: oklch(0.925 0.03 95);
+  --muted-foreground: oklch(0.5 0.06 65);
+  --accent: oklch(0.9 0.05 75);
+  --accent-foreground: oklch(0.38 0.08 150);
+  --destructive: oklch(0.5 0.15 30);
+  --destructive-foreground: oklch(0.96 0.02 90);
+  --border: oklch(0.86 0.05 85);
+  --input: oklch(0.86 0.05 85);
+  --ring: oklch(0.63 0.09 80);
+  --gold: oklch(0.63 0.09 80);
+  --marigold: oklch(0.74 0.15 60);
+  --harvest: oklch(0.83 0.16 90);
+  --vermilion: oklch(0.5 0.15 30);
+  --deep: oklch(0.33 0.07 152);
+  --brown: oklch(0.5 0.06 65);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-display);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* ---------- Independent decoration animations ---------- */
+
+/* Banana leaves / mango leaves: gentle sway around their own base, with a
+   subtle bend (skew). Every element sets --dur / --delay / --rot / --skew /
+   --origin individually. */
+@keyframes anim-sway {
+  0%,
+  100% {
+    transform: rotate(calc(var(--rot, 3deg) * -1)) skewX(calc(var(--skew, 1.5deg) * -1));
+  }
+  50% {
+    transform: rotate(var(--rot, 3deg)) skewX(var(--skew, 1.5deg));
+  }
+}
+.anim-sway {
+  transform-origin: var(--origin, 50% 100%);
+  animation: anim-sway var(--dur, 4s) ease-in-out var(--delay, 0s) infinite;
+  will-change: transform;
+}
+
+/* Hanging marigold strings: swing from the top attachment point. */
+@keyframes anim-swing {
+  0%,
+  100% {
+    transform: rotate(calc(var(--rot, 2.5deg) * -1));
+  }
+  50% {
+    transform: rotate(var(--rot, 2.5deg));
+  }
+}
+.anim-swing {
+  transform-origin: 50% 0%;
+  animation: anim-swing var(--dur, 4s) ease-in-out var(--delay, 0s) infinite;
+  will-change: transform;
+}
+
+/* Foliage branches: very slow drift, barely perceptible. */
+@keyframes anim-drift {
+  0%,
+  100% {
+    transform: rotate(calc(var(--rot, 1.5deg) * -1)) translateX(calc(var(--shift, 2px) * -1));
+  }
+  50% {
+    transform: rotate(var(--rot, 1.5deg)) translateX(var(--shift, 2px));
+  }
+}
+.anim-drift {
+  transform-origin: var(--origin, 50% 100%);
+  animation: anim-drift var(--dur, 6s) ease-in-out var(--delay, 0s) infinite;
+  will-change: transform;
+}
+
+/* Traditional South Indian Wedding Banana Trees (అరటి చెట్లు)
+   Gentle living tree sway anchored at the base of the trunk. */
+@keyframes anim-tree-sway {
+  0%,
+  100% {
+    transform: rotate(calc(var(--tree-rot, 1.8deg) * -1)) skewX(calc(var(--tree-rot, 1.8deg) * -0.2));
+  }
+  50% {
+    transform: rotate(var(--tree-rot, 1.8deg)) skewX(calc(var(--tree-rot, 1.8deg) * 0.2));
+  }
+}
+.anim-tree-sway {
+  animation: anim-tree-sway var(--tree-dur, 8.5s) ease-in-out var(--tree-delay, 0s) infinite;
+  will-change: transform;
+}
+
+/* Falling flower petals: slow float with gravity and individual spin. */
+@keyframes anim-petal-fall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.85;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate3d(var(--drift, 8vw), 110vh, 0) rotate(var(--spin, 300deg));
+    opacity: 0;
+  }
+}
+.anim-petal {
+  animation: anim-petal-fall var(--dur, 14s) linear var(--delay, 0s) infinite;
+  will-change: transform;
+}
+
+@keyframes anim-scroll-hint {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 0.5;
+  }
+}
+.anim-scroll-hint {
+  animation: anim-scroll-hint 1.8s ease-in-out infinite;
+}
+
+/* ---------- Cinematic Movie Title Card Reveal & Motion ---------- */
+@keyframes cinematic-title-reveal {
+  0% {
+    opacity: 0;
+    transform: perspective(600px) scale(0.65) translateY(45px) rotateX(12deg);
+    filter: blur(14px) brightness(2.4) drop-shadow(0 0 50px rgba(245, 158, 11, 1));
+  }
+  35% {
+    opacity: 0.95;
+    filter: blur(4px) brightness(1.7) drop-shadow(0 0 40px rgba(245, 158, 11, 0.95));
+  }
+  65% {
+    opacity: 1;
+    transform: perspective(600px) scale(1.05) translateY(-6px) rotateX(-2deg);
+    filter: blur(0.5px) brightness(1.25) drop-shadow(0 0 28px rgba(217, 119, 6, 0.75));
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(600px) scale(1) translateY(0) rotateX(0deg);
+    filter: blur(0px) brightness(1) drop-shadow(0 14px 30px rgba(181, 138, 69, 0.45));
+  }
+}
+
+@keyframes cinematic-title-float {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+    filter: drop-shadow(0 14px 28px rgba(181, 138, 69, 0.4));
+  }
+  50% {
+    transform: translateY(-8px) scale(1.02);
+    filter: drop-shadow(0 22px 38px rgba(212, 160, 23, 0.6));
+  }
+}
+
+@keyframes title-rays-spin {
+  0% {
+    transform: rotate(0deg) scale(0.92);
+    opacity: 0.45;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.18);
+    opacity: 0.85;
+  }
+  100% {
+    transform: rotate(360deg) scale(0.92);
+    opacity: 0.45;
+  }
+}
+
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-160%) skewX(-25deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  55% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(280%) skewX(-25deg);
+    opacity: 0;
+  }
+}
+
+@keyframes sparkle-twinkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.2) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25) rotate(180deg);
+  }
+}
+
+.anim-cinematic-title {
+  animation:
+    cinematic-title-reveal 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+    cinematic-title-float 6s ease-in-out 2.4s infinite alternate;
+  will-change: transform, filter;
+}
+
+/* ---------- South Indian Epic Movie Title Card Animation System ---------- */
+
+/* Dark warm cinematic background reveal */
+@keyframes cinematic-bg-fade {
+  0% {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.anim-cinematic-bg {
+  animation: cinematic-bg-fade 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Volumetric Golden Spotlight Breathe */
+@keyframes spotlight-glow {
+  0% {
+    opacity: 0;
+    transform: scale(0.65);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+}
+.anim-title-spotlight {
+  animation: spotlight-glow 4s ease-in-out infinite alternate;
+}
+
+/* Floating Gold Particle Embers */
+@keyframes gold-particle-float {
+  0% {
+    transform: translateY(0px) translateX(0px) scale(0.6);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateY(-22px) translateX(8px) scale(1.15);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-48px) translateX(-6px) scale(0.3);
+    opacity: 0;
+  }
+}
+.anim-gold-particle {
+  animation: gold-particle-float var(--particle-dur, 4.5s) ease-in-out var(--particle-delay, 0s) infinite;
+}
+
+/* Line 1: "వావిలపల్లి వారి" Cinematic Fade and Zoom */
+@keyframes movie-line1-fadezoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.86) translateY(-14px);
+    filter: blur(10px) brightness(2.2);
+  }
+  55% {
+    opacity: 0.95;
+    filter: blur(1.5px) brightness(1.35);
+  }
+  85% {
+    transform: scale(1.02) translateY(1px);
+    filter: blur(0px) brightness(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0px) brightness(1);
+  }
+}
+.anim-movie-line1-fadezoom {
+  animation: movie-line1-fadezoom 1.5s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
+  will-change: transform, opacity, filter;
+}
+
+/* Line 2: "కళ్యాణ మహోత్సవం" Letter-by-Letter Scale-Up */
+@keyframes letter-cinematic-reveal {
+  0% {
+    opacity: 0;
+    transform: perspective(650px) scale(0.45) translateY(42px) rotateX(20deg);
+    filter: blur(12px) brightness(3) drop-shadow(0 0 35px rgba(245, 158, 11, 1));
+  }
+  45% {
+    opacity: 1;
+    filter: blur(2.5px) brightness(1.7) drop-shadow(0 0 25px rgba(245, 158, 11, 0.85));
+  }
+  75% {
+    transform: perspective(650px) scale(1.08) translateY(-4px) rotateX(-3deg);
+    filter: blur(0.5px) brightness(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(650px) scale(1) translateY(0) rotateX(0deg);
+    filter: blur(0px) brightness(1);
+  }
+}
+
+.kalyanam-char {
+  display: inline-block;
+  font-family: "Noto Serif Telugu", "Ramabhadra", serif;
+  font-weight: 900;
+  color: #8c121b; /* Royal Velvet Ruby Crimson */
+  -webkit-text-stroke: 1.5px #fde047; /* Polished 3D Gold Rim */
+  text-shadow:
+    /* Top bevel highlights */
+    0 -1px 0 #fffbeb,
+    0 -2px 0 #fde047,
+    /* Gold bevel stroke */
+    -1.5px -1.5px 0 #f59e0b,
+     1.5px -1.5px 0 #f59e0b,
+    -1.5px  1.5px 0 #d97706,
+     1.5px  1.5px 0 #d97706,
+    -2px 0 0 #b45309,
+     2px 0 0 #b45309,
+    /* 3D Extrusion downward */
+    0 2px 0 #92400e,
+    0 3.5px 0 #78350f,
+    0 5px 0 #451a03,
+    0 6.5px 1.5px rgba(0, 0, 0, 0.5),
+    /* Warm golden ambient bloom */
+    0 12px 26px rgba(245, 158, 11, 0.45);
+  transform-origin: center bottom;
+  animation: letter-cinematic-reveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) var(--letter-delay, 2s) both;
+  will-change: transform, opacity, filter;
+}
+
+/* Light sweep across all letters after reveal */
+@keyframes text-light-sweep {
+  0% {
+    transform: translateX(-160%) skewX(-25deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateX(280%) skewX(-25deg);
+    opacity: 0;
+  }
+}
+.anim-title-sweep {
+  animation: text-light-sweep 3.2s cubic-bezier(0.4, 0, 0.2, 1) 3.8s infinite;
+  will-change: transform;
+}
+
+/* Hanging Bells Swing */
+@keyframes bell-swing {
+  0% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+.anim-bell-swing {
+  transform-origin: 20px 0px;
+  animation: bell-swing 3.4s ease-in-out infinite;
+  will-change: transform;
+}
+
+.anim-title-rays {
+  animation: title-rays-spin 26s linear infinite;
+  will-change: transform;
+}
+
+.anim-shimmer-sweep {
+  animation: shimmer-sweep 3.6s cubic-bezier(0.4, 0, 0.2, 1) 1.6s infinite;
+  will-change: transform;
+}
+
+.anim-sparkle {
+  animation: sparkle-twinkle var(--sparkle-dur, 2.4s) ease-in-out var(--sparkle-delay, 0s) infinite;
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Handmade paper grain ---------- */
+.grain-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* ---------- Accessibility ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .anim-sway,
+  .anim-swing,
+  .anim-drift,
+  .anim-petal,
+  .anim-tree-sway,
+  .anim-scroll-hint {
+    animation: none !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
