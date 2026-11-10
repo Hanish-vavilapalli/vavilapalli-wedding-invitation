@@ -16,14 +16,14 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "{GV} Gireesh ❤️ Sri Varsha — Wedding Invitation",
+        title: "Gireesh ❤️ Sri Varsha — Wedding Invitation",
       },
       {
         name: "description",
         content:
           "Traditional Telugu wedding invitation — Gireesh weds Sri Varsha, Wednesday 16 December 2026, Muhurtham 8:03 AM IST, Komiri Village, Vizianagaram District, Andhra Pradesh.",
       },
-      { property: "og:title", content: "{GV} Gireesh ❤️ Sri Varsha — Wedding Invitation" },
+      { property: "og:title", content: "Gireesh ❤️ Sri Varsha — Wedding Invitation" },
       {
         property: "og:description",
         content:
