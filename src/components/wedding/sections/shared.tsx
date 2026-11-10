@@ -7,7 +7,7 @@ export function Ornament() {
   return (
     <div aria-hidden="true" className="flex items-center justify-center gap-3 py-2">
       <span className="h-px w-10 sm:w-16 bg-gradient-to-r from-transparent to-gold/70" />
-      <span className="text-gold text-sm sm:text-base">❦</span>
+      <span className="text-gold text-xs sm:text-sm">❖</span>
       <span className="h-px w-10 sm:w-16 bg-gradient-to-l from-transparent to-gold/70" />
     </div>
   );

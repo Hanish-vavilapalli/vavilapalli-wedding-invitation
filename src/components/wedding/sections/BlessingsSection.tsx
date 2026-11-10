@@ -19,7 +19,7 @@ export function BlessingsSection() {
       <Ornament />
       <Kicker>Thank You for Being Part of Our Happiness</Kicker>
       <h2 className="mt-3 text-3xl font-semibold tracking-wide text-primary sm:text-5xl">
-        Gireesh <span className="text-vermilion">❤</span> Sri Varsha
+        Gireesh <span className="font-serif italic text-gold text-2xl sm:text-4xl mx-1.5 font-normal">&</span> Sri Varsha
       </h2>
       <p className="mt-3 text-sm text-muted-foreground">
         Share this invitation with your family and friends.

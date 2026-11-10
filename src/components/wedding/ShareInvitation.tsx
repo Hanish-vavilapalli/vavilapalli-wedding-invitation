@@ -4,7 +4,7 @@ import { Check, Copy, MessageCircle, Share2 } from "lucide-react";
 import { wedding } from "./config";
 
 function shareMessage(url: string) {
-  return `${wedding.groom.name.replace("Chi. ", "")} ❤️ ${wedding.bride.name.replace(
+  return `${wedding.groom.name.replace("Chi. ", "")} & ${wedding.bride.name.replace(
     "Sri ",
     "",
   )} — ${wedding.dateLong}, Muhurtham ${wedding.muhurtham}. You are warmly invited! ${url}`;

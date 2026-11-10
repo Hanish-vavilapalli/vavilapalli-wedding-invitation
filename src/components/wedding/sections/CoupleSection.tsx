@@ -16,8 +16,8 @@ export function CoupleSection() {
       <h2 className="mt-4 text-3xl sm:text-5xl font-semibold text-primary">
         {wedding.groom.name}
       </h2>
-      <p aria-hidden="true" className="text-xl sm:text-2xl text-vermilion my-0.5">
-        ❤
+      <p className="my-1.5 font-serif italic text-gold text-sm sm:text-base tracking-[0.25em] uppercase">
+        weds
       </p>
       <h2 className="text-3xl sm:text-5xl font-semibold text-primary">
         {wedding.bride.name}

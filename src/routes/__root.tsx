@@ -78,13 +78,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Gireesh ❤️ Sri Varsha — Wedding Invitation" },
+      { title: "Gireesh & Sri Varsha — Wedding Invitation" },
       {
         name: "description",
         content:
           "Traditional Telugu wedding invitation of Gireesh and Sri Varsha — Wednesday, 16 December 2026, Muhurtham 8:03 AM, Komiri Village, Vizianagaram District.",
       },
-      { property: "og:title", content: "Gireesh ❤️ Sri Varsha — Wedding Invitation" },
+      { property: "og:title", content: "Gireesh & Sri Varsha — Wedding Invitation" },
       {
         property: "og:description",
         content: "Traditional Telugu wedding invitation — 16 December 2026, Muhurtham 8:03 AM.",
