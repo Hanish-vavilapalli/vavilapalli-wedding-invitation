@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A" />
+      <stop offset="40%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#451408" />
+      <stop offset="100%" stop-color="#1F0703" />
+    </linearGradient>
+  </defs>
+
+  <!-- Luxury rounded square badge -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bgGrad)" stroke="url(#goldGrad)" stroke-width="2.5" />
+  <rect x="5.5" y="5.5" width="53" height="53" rx="12.5" fill="none" stroke="url(#goldGrad)" stroke-width="0.75" stroke-dasharray="2,2" opacity="0.6" />
+
+  <!-- Modern {GV} monogram -->
+  <text
+    x="32"
+    y="42"
+    text-anchor="middle"
+    font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans', sans-serif"
+    font-weight="800"
+    font-size="25"
+    fill="url(#goldGrad)"
+    letter-spacing="-0.5"
+  >
+    <tspan fill="#FDE68A" font-weight="300" font-size="22">{</tspan><tspan fill="url(#goldGrad)">GV</tspan><tspan fill="#FDE68A" font-weight="300" font-size="22">}</tspan>
+  </text>
+
+  <!-- Top delicate diamond spark -->
+  <polygon points="32,8 34,11 32,14 30,11" fill="url(#goldGrad)" />
+</svg>

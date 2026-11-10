@@ -1,4 +1,5 @@
 import { assets, wedding } from "../config";
+import { MonogramGV } from "../MonogramGV";
 import { ShareInvitation } from "../ShareInvitation";
 
 import { Kicker, Ornament, SectionShell, Telugu } from "./shared";
@@ -28,6 +29,9 @@ export function BlessingsSection() {
         <ShareInvitation />
       </div>
       <Ornament />
+      <div className="my-2 flex justify-center">
+        <MonogramGV size="md" />
+      </div>
       <p className="text-xs uppercase tracking-[0.3em] text-gold">
         {wedding.heading}
       </p>
