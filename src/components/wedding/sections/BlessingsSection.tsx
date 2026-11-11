@@ -11,9 +11,9 @@ export function BlessingsSection() {
         src={assets.elephantCouple}
         alt="Royal wedding couple on a decorated elephant"
         loading="lazy"
-        className="mx-auto h-auto w-52 sm:w-60 drop-shadow-sm"
+        className="mx-auto h-auto w-72 sm:w-96 md:w-[420px] drop-shadow-md"
       />
-      <Telugu className="mt-4 text-2xl font-bold text-vermilion sm:text-4xl tracking-wide">
+      <Telugu className="mt-6 text-2xl font-bold text-vermilion sm:text-4xl tracking-wide">
         {wedding.blessingsTelugu}
       </Telugu>
       <Ornament />
