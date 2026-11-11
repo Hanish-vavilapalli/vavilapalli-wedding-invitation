@@ -1,6 +1,5 @@
-import { wedding } from "../config";
+import { assets, wedding } from "../config";
 import { ShareInvitation } from "../ShareInvitation";
-import { WeddingVideoPlayer } from "../WeddingVideoPlayer";
 
 import { Kicker, Ornament, SectionShell, Telugu } from "./shared";
 
@@ -8,9 +7,13 @@ import { Kicker, Ornament, SectionShell, Telugu } from "./shared";
 export function BlessingsSection() {
   return (
     <SectionShell id="blessings">
-      <Kicker>Wedding Invitation Video</Kicker>
-      <WeddingVideoPlayer />
-      <Telugu className="mt-8 text-2xl font-bold text-vermilion sm:text-4xl tracking-wide">
+      <img
+        src={assets.elephantCouple}
+        alt="Royal wedding couple on an animated elephant"
+        loading="lazy"
+        className="mx-auto h-auto w-72 sm:w-96 md:w-[420px] drop-shadow-md"
+      />
+      <Telugu className="mt-6 text-2xl font-bold text-vermilion sm:text-4xl tracking-wide">
         {wedding.blessingsTelugu}
       </Telugu>
       <Ornament />
