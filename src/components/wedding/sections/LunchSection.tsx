@@ -13,22 +13,22 @@ export function LunchSection() {
         loading="lazy"
         className="mx-auto mt-4 h-auto w-72 sm:w-96 md:w-[420px] drop-shadow-md"
       />
-      <h2 className="mt-4 text-3xl font-bold text-primary sm:text-4xl">
+      <h2 className="mt-4 text-4xl font-extrabold text-primary sm:text-5xl">
         {wedding.lunch.date}
       </h2>
       {/* Lunch Time - Clearly Visible & Highlighted */}
-      <div className="my-3 inline-block rounded-2xl border-2 border-gold/40 bg-gold/10 px-8 py-3 shadow-sm">
-        <p className="text-2xl sm:text-4xl font-extrabold text-vermilion tracking-wide">
+      <div className="my-3 inline-block rounded-2xl border-2 border-gold/60 bg-gold/15 px-9 py-4 shadow-md">
+        <p className="text-3xl sm:text-5xl font-black text-vermilion tracking-wide">
           {wedding.lunch.time}
         </p>
       </div>
-      <p className="text-base sm:text-xl font-bold text-primary">{wedding.lunch.at}</p>
+      <p className="text-xl sm:text-3xl font-extrabold text-primary">{wedding.lunch.at}</p>
       <Ornament />
-      <p className="text-base sm:text-lg leading-relaxed text-foreground/80 font-medium max-w-lg mx-auto">
+      <p className="text-lg sm:text-2xl leading-relaxed text-foreground font-semibold max-w-lg mx-auto">
         Join us for a traditional wedding feast served with love, immediately
         after the muhurtham.
       </p>
-      <Telugu className="mt-3 text-base sm:text-xl font-semibold text-primary max-w-lg mx-auto">
+      <Telugu className="mt-3 text-lg sm:text-2xl font-black text-primary max-w-lg mx-auto">
         వివాహ భోజనానికి మీరు సకుటుంబ సపరివార సమేతంగా విచ్చేయవలసి వినంతి.
       </Telugu>
     </SectionShell>

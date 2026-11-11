@@ -42,16 +42,16 @@ export function Countdown() {
           <div className="text-center px-1.5">
             <div
               data-countdown={unit.key}
-              className="text-3xl font-bold tabular-nums text-primary sm:text-5xl"
+              className="text-4xl font-black tabular-nums text-primary sm:text-6xl"
             >
               {left === null ? "–" : String(left[unit.key]).padStart(2, "0")}
             </div>
-            <div className="mt-1 text-xs uppercase tracking-[0.2em] text-gold sm:text-sm font-semibold">
+            <div className="mt-1 text-sm uppercase tracking-[0.2em] text-gold sm:text-base font-bold">
               {unit.label}
             </div>
           </div>
           {i < UNITS.length - 1 && (
-            <span className="text-gold/60 font-serif text-2xl -mt-4 select-none">:</span>
+            <span className="text-gold/60 font-serif text-3xl sm:text-4xl -mt-5 select-none">:</span>
           )}
         </div>
       ))}

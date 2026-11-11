@@ -15,7 +15,7 @@ export function WelcomeSection() {
         loading="eager"
         className="h-auto w-24 sm:w-28 drop-shadow-[0_8px_16px_oklch(0.4_0.08_65/0.25)]"
       />
-      <Telugu className="mt-4 text-xl sm:text-2xl font-bold tracking-wider text-primary">
+      <Telugu className="mt-4 text-2xl sm:text-3xl font-extrabold tracking-wider text-primary">
         {wedding.greetingTelugu}
       </Telugu>
       <Ornament />
@@ -38,16 +38,16 @@ export function WelcomeSection() {
         />
       </div>
       <Kicker>{wedding.heading}</Kicker>
-      <h1 className="mt-3 text-4xl sm:text-6xl font-bold tracking-wide text-primary">
-        Gireesh <span className="font-serif italic text-gold text-3xl sm:text-5xl mx-2 font-normal">weds</span> Sri Varsha
+      <h1 className="mt-3 text-5xl sm:text-6xl font-black tracking-wide text-primary">
+        Gireesh <span className="font-serif italic text-gold text-4xl sm:text-5xl mx-2 font-normal">weds</span> Sri Varsha
       </h1>
-      <p className="mt-4 max-w-lg text-base sm:text-xl leading-relaxed text-foreground/80 font-medium">
+      <p className="mt-4 max-w-lg text-lg sm:text-2xl leading-relaxed text-foreground font-semibold">
         Together with our families, we joyfully invite you to bless us on our
         wedding day.
       </p>
-      <div className="anim-scroll-hint mt-8 flex flex-col items-center gap-1.5 text-gold font-semibold">
-        <span className="text-xs sm:text-sm uppercase tracking-[0.3em]">Scroll to Explore</span>
-        <span aria-hidden="true" className="text-xl">
+      <div className="anim-scroll-hint mt-8 flex flex-col items-center gap-1.5 text-gold font-bold">
+        <span className="text-sm sm:text-base uppercase tracking-[0.25em]">Scroll to Explore</span>
+        <span aria-hidden="true" className="text-2xl">
           ⌄
         </span>
       </div>

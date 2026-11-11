@@ -13,33 +13,33 @@ export function CoupleSection() {
         loading="lazy"
         className="mx-auto mt-4 h-auto w-64 sm:w-80 md:w-[380px] drop-shadow-md"
       />
-      <h2 className="mt-4 text-4xl sm:text-6xl font-bold text-primary">
+      <h2 className="mt-4 text-5xl sm:text-6xl font-black text-primary">
         {wedding.groom.name}
       </h2>
-      <p className="my-2 font-serif italic text-gold text-base sm:text-xl tracking-[0.25em] uppercase">
+      <p className="my-2 font-serif italic text-gold text-xl sm:text-2xl tracking-[0.25em] uppercase font-bold">
         weds
       </p>
-      <h2 className="text-4xl sm:text-6xl font-bold text-primary">
+      <h2 className="text-5xl sm:text-6xl font-black text-primary">
         {wedding.bride.name}
       </h2>
       <Ornament />
-      <div className="grid grid-cols-2 gap-4 text-base sm:text-lg max-w-lg mx-auto py-2">
-        <div className="space-y-1">
-          <p className="font-bold text-primary text-base sm:text-xl">{wedding.groom.father}</p>
-          <p className="text-foreground/85 font-medium text-sm sm:text-base">{wedding.groom.mother}</p>
-          <p className="mt-1 text-xs uppercase tracking-widest text-gold font-semibold sm:text-sm">Groom's Parents</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 text-base sm:text-lg max-w-lg mx-auto py-2">
+        <div className="space-y-1 rounded-2xl bg-gold/5 border border-gold/30 p-4 sm:p-2 sm:bg-transparent sm:border-0">
+          <p className="font-extrabold text-primary text-lg sm:text-2xl">{wedding.groom.father}</p>
+          <p className="text-foreground font-semibold text-base sm:text-xl">{wedding.groom.mother}</p>
+          <p className="mt-1 text-xs uppercase tracking-widest text-gold font-bold sm:text-sm">Groom's Parents</p>
         </div>
-        <div className="space-y-1">
-          <p className="font-bold text-primary text-base sm:text-xl">{wedding.bride.father}</p>
-          <p className="text-foreground/85 font-medium text-sm sm:text-base">{wedding.bride.mother}</p>
-          <p className="mt-1 text-xs uppercase tracking-widest text-gold font-semibold sm:text-sm">Bride's Parents</p>
+        <div className="space-y-1 rounded-2xl bg-gold/5 border border-gold/30 p-4 sm:p-2 sm:bg-transparent sm:border-0">
+          <p className="font-extrabold text-primary text-lg sm:text-2xl">{wedding.bride.father}</p>
+          <p className="text-foreground font-semibold text-base sm:text-xl">{wedding.bride.mother}</p>
+          <p className="mt-1 text-xs uppercase tracking-widest text-gold font-bold sm:text-sm">Bride's Parents</p>
         </div>
       </div>
       <Ornament />
-      <Telugu className="text-base sm:text-xl leading-relaxed text-foreground font-medium max-w-lg mx-auto">
+      <Telugu className="text-lg sm:text-2xl leading-relaxed text-foreground font-bold max-w-lg mx-auto">
         మీ కుటుంబ సభ్యుల సమక్షంలో మా వివాహానికి విచ్చేసి ఆశీర్వదించాలని మనస్ఫూర్తిగా ఆహ్వానిస్తున్నాము.
       </Telugu>
-      <p className="mt-3 text-base sm:text-lg italic text-muted-foreground max-w-lg mx-auto">
+      <p className="mt-3 text-base sm:text-xl italic text-foreground/85 font-medium max-w-lg mx-auto">
         We warmly invite you and your family to attend our wedding and bless
         the couple.
       </p>

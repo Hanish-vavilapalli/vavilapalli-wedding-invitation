@@ -7,7 +7,7 @@ export function CeremonySection() {
   return (
     <SectionShell id="ceremonies">
       <Kicker>Wedding Ceremonies</Kicker>
-      <Telugu className="mt-2 text-lg sm:text-2xl text-primary font-bold">మాంగల్య స్నేహ సంబంధాలు</Telugu>
+      <Telugu className="mt-2 text-2xl sm:text-3xl text-primary font-black">మాంగల్య స్నేహ సంబంధాలు</Telugu>
       <Ornament />
       <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 max-w-xl mx-auto">
         {ceremonies.map((c) => (
@@ -23,8 +23,8 @@ export function CeremonySection() {
               className="mx-auto aspect-square h-auto w-full max-w-[140px] sm:max-w-[160px] object-contain drop-shadow-sm"
             />
             <figcaption className="mt-2.5">
-              <Telugu className="text-base sm:text-xl font-bold text-primary">{c.te}</Telugu>
-              <p className="mt-0.5 text-xs sm:text-sm font-semibold tracking-wide text-muted-foreground">{c.en}</p>
+              <Telugu className="text-lg sm:text-2xl font-extrabold text-primary">{c.te}</Telugu>
+              <p className="mt-0.5 text-sm sm:text-base font-bold tracking-wide text-foreground/80">{c.en}</p>
             </figcaption>
           </figure>
         ))}

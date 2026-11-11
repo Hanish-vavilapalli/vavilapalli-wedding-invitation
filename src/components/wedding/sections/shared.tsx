@@ -38,7 +38,7 @@ export function SectionShell({
 /** Section heading, gold small caps style. */
 export function Kicker({ children }: { children: ReactNode }) {
   return (
-    <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-gold">
+    <p className="text-sm sm:text-base font-extrabold uppercase tracking-[0.2em] text-gold">
       {children}
     </p>
   );
@@ -46,5 +46,5 @@ export function Kicker({ children }: { children: ReactNode }) {
 
 /** Telugu text in the dedicated Telugu serif. */
 export function Telugu({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <p className={`font-telugu leading-relaxed text-primary/95 text-base sm:text-lg ${className}`}>{children}</p>;
+  return <p className={`font-telugu leading-relaxed text-primary text-lg sm:text-2xl font-bold ${className}`}>{children}</p>;
 }
