@@ -21,6 +21,7 @@ import templeMain from "@/assets/wedding/temple_main.webp";
 import coupleVarmala from "@/assets/wedding/couple_varmala.webp";
 import brideGreeting from "@/assets/wedding/bride_greeting.webp";
 import girlPraying from "@/assets/wedding/girl_praying.webp";
+import coupleGreeting from "@/assets/wedding/couple_greeting.webp";
 import elephantCouple from "@/assets/wedding/elephant_couple.webp";
 import ganesha from "@/assets/wedding/ganesha.webp";
 import weddingStage from "@/assets/wedding/wedding_stage.webp";
@@ -54,6 +55,7 @@ export const assets = {
   coupleVarmala,
   brideGreeting,
   girlPraying,
+  coupleGreeting,
   elephantCouple,
   ganesha,
   weddingStage,

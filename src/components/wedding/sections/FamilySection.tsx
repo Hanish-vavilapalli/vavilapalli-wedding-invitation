@@ -8,10 +8,10 @@ export function FamilySection() {
     <SectionShell id="family">
       <Kicker>Invited With Love</Kicker>
       <img
-        src={assets.girlPraying}
-        alt="Girl welcoming in prayer"
+        src={assets.coupleGreeting}
+        alt="Groom and Bride welcoming with folded hands"
         loading="lazy"
-        className="mx-auto mt-4 h-auto w-40 sm:w-52 drop-shadow-md"
+        className="mx-auto mt-4 h-auto w-72 sm:w-88 md:w-[400px] drop-shadow-md"
       />
       <div className="mt-5 space-y-2 text-base sm:text-lg max-w-xl mx-auto">
         <div>
