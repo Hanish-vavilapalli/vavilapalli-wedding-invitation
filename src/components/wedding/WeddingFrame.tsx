@@ -165,29 +165,6 @@ export function SideFoliage({ side }: { side: "left" | "right" }) {
   );
 }
 
-/** Bottom decor: compact brass kalash on mobile corners. */
-function BottomDecor() {
-  return (
-    <div className="absolute inset-x-0 bottom-0 pointer-events-none md:hidden">
-      <img
-        src={assets.kalash}
-        alt=""
-        aria-hidden="true"
-        loading="lazy"
-        draggable={false}
-        className="absolute bottom-0 left-0 h-auto w-[clamp(36px,9vw,56px)]"
-      />
-      <img
-        src={assets.kalash}
-        alt=""
-        aria-hidden="true"
-        loading="lazy"
-        draggable={false}
-        className="absolute bottom-0 right-0 h-auto w-[clamp(36px,9vw,56px)] scale-x-[-1]"
-      />
-    </div>
-  );
-}
 
 /** A few slow floating petals. */
 function Petals() {
@@ -237,7 +214,6 @@ export function WeddingFrame() {
       {/* Top garlands & falling petals: z-20 floating overhead */}
       <div className="absolute inset-0 z-20">
         <TopGarlands />
-        <BottomDecor />
         <Petals />
       </div>
       <span className="sr-only">{wedding.heading}</span>
