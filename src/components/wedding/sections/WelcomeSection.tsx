@@ -15,7 +15,7 @@ export function WelcomeSection() {
         loading="eager"
         className="h-auto w-24 sm:w-28 drop-shadow-[0_8px_16px_oklch(0.4_0.08_65/0.25)]"
       />
-      <Telugu className="mt-4 text-base sm:text-lg font-medium text-primary">
+      <Telugu className="mt-4 text-xl sm:text-2xl font-bold tracking-wider text-primary">
         {wedding.greetingTelugu}
       </Telugu>
       <Ornament />
@@ -34,20 +34,20 @@ export function WelcomeSection() {
           src={assets.titleCinematic}
           alt="వావిలపల్లి వారి కళ్యాణ మహోత్సవం"
           loading="eager"
-          className="anim-cinematic-title relative z-10 h-auto w-full max-w-[360px] sm:max-w-[480px] md:max-w-[540px] object-contain filter drop-shadow-[0_14px_28px_rgba(180,83,9,0.22)]"
+          className="anim-cinematic-title relative z-10 h-auto w-full max-w-[380px] sm:max-w-[500px] md:max-w-[560px] object-contain filter drop-shadow-[0_14px_28px_rgba(180,83,9,0.22)]"
         />
       </div>
       <Kicker>{wedding.heading}</Kicker>
-      <h1 className="mt-2 text-3xl sm:text-5xl font-semibold tracking-wide text-primary">
-        Gireesh <span className="font-serif italic text-gold text-2xl sm:text-4xl mx-1.5 font-normal">weds</span> Sri Varsha
+      <h1 className="mt-3 text-4xl sm:text-6xl font-bold tracking-wide text-primary">
+        Gireesh <span className="font-serif italic text-gold text-3xl sm:text-5xl mx-2 font-normal">weds</span> Sri Varsha
       </h1>
-      <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
+      <p className="mt-4 max-w-lg text-base sm:text-xl leading-relaxed text-foreground/80 font-medium">
         Together with our families, we joyfully invite you to bless us on our
         wedding day.
       </p>
-      <div className="anim-scroll-hint mt-8 flex flex-col items-center gap-1 text-gold">
-        <span className="text-[10px] uppercase tracking-[0.3em]">Scroll to Explore</span>
-        <span aria-hidden="true" className="text-lg">
+      <div className="anim-scroll-hint mt-8 flex flex-col items-center gap-1.5 text-gold font-semibold">
+        <span className="text-xs sm:text-sm uppercase tracking-[0.3em]">Scroll to Explore</span>
+        <span aria-hidden="true" className="text-xl">
           ⌄
         </span>
       </div>

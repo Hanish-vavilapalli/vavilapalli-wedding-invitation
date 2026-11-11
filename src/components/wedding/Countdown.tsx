@@ -36,22 +36,22 @@ export function Countdown() {
   }, [target]);
 
   return (
-    <div className="flex items-center justify-center gap-3 sm:gap-6 py-2">
+    <div className="flex items-center justify-center gap-3 sm:gap-7 py-3">
       {UNITS.map((unit, i) => (
-        <div key={unit.key} className="flex items-center gap-3 sm:gap-6">
-          <div className="text-center px-1">
+        <div key={unit.key} className="flex items-center gap-3 sm:gap-7">
+          <div className="text-center px-1.5">
             <div
               data-countdown={unit.key}
-              className="text-2xl font-semibold tabular-nums text-primary sm:text-4xl"
+              className="text-3xl font-bold tabular-nums text-primary sm:text-5xl"
             >
               {left === null ? "–" : String(left[unit.key]).padStart(2, "0")}
             </div>
-            <div className="mt-1 text-[10px] uppercase tracking-[0.2em] text-gold sm:text-xs">
+            <div className="mt-1 text-xs uppercase tracking-[0.2em] text-gold sm:text-sm font-semibold">
               {unit.label}
             </div>
           </div>
           {i < UNITS.length - 1 && (
-            <span className="text-gold/50 font-serif text-lg -mt-3 select-none">:</span>
+            <span className="text-gold/60 font-serif text-2xl -mt-4 select-none">:</span>
           )}
         </div>
       ))}

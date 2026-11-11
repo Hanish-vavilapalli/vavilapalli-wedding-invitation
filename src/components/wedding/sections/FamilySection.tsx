@@ -13,27 +13,31 @@ export function FamilySection() {
         loading="lazy"
         className="mx-auto mt-4 h-auto w-32 sm:w-40 drop-shadow-sm"
       />
-      <div className="mt-4 space-y-1 text-sm sm:text-base">
-        <p className="font-semibold text-primary">
-          {wedding.groom.father} & {wedding.groom.mother}
-        </p>
-        <p className="text-xs uppercase tracking-widest text-gold">
-          Parents of the Groom
-        </p>
+      <div className="mt-5 space-y-2 text-base sm:text-lg max-w-xl mx-auto">
+        <div>
+          <p className="text-lg sm:text-2xl font-bold text-primary">
+            {wedding.groom.father} & {wedding.groom.mother}
+          </p>
+          <p className="mt-1 text-xs sm:text-sm uppercase tracking-widest text-gold font-semibold">
+            Parents of the Groom
+          </p>
+        </div>
         <Ornament />
-        <p className="font-semibold text-primary">
-          {wedding.bride.father} & {wedding.bride.mother}
-        </p>
-        <p className="text-xs uppercase tracking-widest text-gold">
-          Parents of the Bride
-        </p>
+        <div>
+          <p className="text-lg sm:text-2xl font-bold text-primary">
+            {wedding.bride.father} & {wedding.bride.mother}
+          </p>
+          <p className="mt-1 text-xs sm:text-sm uppercase tracking-widest text-gold font-semibold">
+            Parents of the Bride
+          </p>
+        </div>
       </div>
       <Ornament />
-      <Telugu className="text-sm leading-relaxed text-foreground max-w-md mx-auto">
+      <Telugu className="text-base sm:text-xl leading-relaxed text-foreground font-medium max-w-lg mx-auto">
         మా కుమారుడి వివాహ మహోత్సవానికి మీరు సకుటుంబ సపరివార సమేతంగా విచ్చేసి
         వధూవరులను ఆశీర్వదించవలసి వినంతి.
       </Telugu>
-      <p className="mt-2 text-sm italic text-muted-foreground max-w-md mx-auto">
+      <p className="mt-3 text-base sm:text-lg italic text-muted-foreground max-w-lg mx-auto">
         We request the honour of your presence with your family to bless the
         bride and groom.
       </p>

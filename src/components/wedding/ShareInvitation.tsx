@@ -11,7 +11,7 @@ function shareMessage(url: string) {
 }
 
 const btn =
-  "inline-flex items-center justify-center gap-2 rounded-full border border-gold/50 px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-accent focus-visible:outline-2 focus-visible:outline-ring";
+  "inline-flex items-center justify-center gap-2 rounded-full border border-gold/50 px-6 py-2.5 text-base font-semibold text-primary transition-colors hover:bg-accent focus-visible:outline-2 focus-visible:outline-ring shadow-sm";
 
 /** WhatsApp share, native Web Share API and copy-link with fallbacks. */
 export function ShareInvitation() {
