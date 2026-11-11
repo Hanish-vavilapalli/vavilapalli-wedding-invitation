@@ -15,7 +15,7 @@ export function VenueSection() {
         src={assets.templeMain}
         alt="Traditional South Indian temple"
         loading="lazy"
-        className="mx-auto mt-4 h-auto w-52 sm:w-60 drop-shadow-sm"
+        className="mx-auto mt-4 h-auto w-72 sm:w-96 md:w-[420px] drop-shadow-md"
       />
       <h2 className="mt-4 text-3xl font-bold text-primary sm:text-4xl">
         {wedding.venue.line1}

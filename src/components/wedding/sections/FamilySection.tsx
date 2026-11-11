@@ -11,7 +11,7 @@ export function FamilySection() {
         src={assets.girlPraying}
         alt="Girl welcoming in prayer"
         loading="lazy"
-        className="mx-auto mt-4 h-auto w-32 sm:w-40 drop-shadow-sm"
+        className="mx-auto mt-4 h-auto w-40 sm:w-52 drop-shadow-md"
       />
       <div className="mt-5 space-y-2 text-base sm:text-lg max-w-xl mx-auto">
         <div>

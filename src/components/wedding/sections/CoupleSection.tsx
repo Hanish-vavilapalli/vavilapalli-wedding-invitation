@@ -11,7 +11,7 @@ export function CoupleSection() {
         src={assets.coupleVarmala}
         alt="Traditional wedding couple exchanging garlands"
         loading="lazy"
-        className="mx-auto mt-4 h-auto w-52 sm:w-64 drop-shadow-sm"
+        className="mx-auto mt-4 h-auto w-64 sm:w-80 md:w-[380px] drop-shadow-md"
       />
       <h2 className="mt-4 text-4xl sm:text-6xl font-bold text-primary">
         {wedding.groom.name}

@@ -11,7 +11,7 @@ export function LunchSection() {
         src={assets.weddingStage}
         alt="Decorated wedding stage with a traditional sofa"
         loading="lazy"
-        className="mx-auto mt-4 h-auto w-56 sm:w-64 drop-shadow-sm"
+        className="mx-auto mt-4 h-auto w-72 sm:w-96 md:w-[420px] drop-shadow-md"
       />
       <h2 className="mt-4 text-3xl font-bold text-primary sm:text-4xl">
         {wedding.lunch.date}
