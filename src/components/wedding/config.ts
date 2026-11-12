@@ -117,8 +117,7 @@ export const wedding = {
   /** Google Maps destination query — address based, no invented coordinates. */
   mapsQuery: "Komiri Village, Vizianagaram District, Andhra Pradesh",
   /**
-   * Background music track URL. No licensed track has been supplied yet, so
-   * the music control stays hidden until one is added here.
+   * Background music track URL — continuous looping wedding shehnai / nadaswaram.
    */
-  audioUrl: undefined as string | undefined,
+  audioUrl: "/wedding_song.mp3" as string | undefined,
 };
