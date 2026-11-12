@@ -83,7 +83,7 @@ export const wedding = {
     mother: "Smt. Chinnammadu",
   },
   bride: {
-    name: "Chi. Sou. Varsha",
+    name: "Chi. La. Sow. Sri Varsha",
     shortName: "Varsha",
     father: "Sri Pogiri Laxmana Naidu",
     mother: "Smt. Usha Rani",

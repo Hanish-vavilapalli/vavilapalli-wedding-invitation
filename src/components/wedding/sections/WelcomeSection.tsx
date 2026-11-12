@@ -38,7 +38,7 @@ export function WelcomeSection() {
         />
       </div>
       <Kicker>{wedding.heading}</Kicker>
-      <h1 className="mt-4 flex flex-col items-center justify-center gap-1.5 text-4xl sm:text-6xl font-black tracking-wide text-primary">
+      <h1 className="mt-4 flex flex-col items-center justify-center gap-1.5 text-3xl min-[380px]:text-4xl sm:text-6xl font-black tracking-wide text-primary">
         <span>{wedding.groom.name}</span>
         <span className="font-serif italic text-gold text-2xl sm:text-3xl font-normal tracking-widest lowercase">
           weds

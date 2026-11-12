@@ -16,17 +16,17 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Chi. Gireesh & Chi. Sou. Varsha — Wedding Invitation",
+        title: "Chi. Gireesh & Chi. La. Sow. Sri Varsha — Wedding Invitation",
       },
       {
         name: "description",
         content:
-          "Traditional Telugu wedding invitation — Chi. Gireesh weds Chi. Sou. Varsha, Wednesday 16 December 2026, Auspicious Muhurtham: 8:03 AM IST, Komiri Village, Vizianagaram District, Andhra Pradesh.",
+          "Traditional Telugu wedding invitation — Chi. Gireesh weds Chi. La. Sow. Sri Varsha, Wednesday 16 December 2026, Auspicious Muhurtham: 8:03 AM IST, Komiri Village, Vizianagaram District, Andhra Pradesh.",
       },
       { property: "og:site_name", content: "వావిలపల్లి వారి కళ్యాణ మహోత్సవం" },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://vavilapallikalyanotsavam.live/" },
-      { property: "og:title", content: "Chi. Gireesh & Chi. Sou. Varsha — Wedding Invitation" },
+      { property: "og:title", content: "Chi. Gireesh & Chi. La. Sow. Sri Varsha — Wedding Invitation" },
       {
         property: "og:description",
         content:
@@ -37,9 +37,9 @@ export const Route = createFileRoute("/")({
       { property: "og:image:type", content: "image/jpeg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "వావిలపల్లి వారి కళ్యాణ మహోత్సవం — Chi. Gireesh & Chi. Sou. Varsha" },
+      { property: "og:image:alt", content: "వావిలపల్లి వారి కళ్యాణ మహోత్సవం — Chi. Gireesh & Chi. La. Sow. Sri Varsha" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Chi. Gireesh & Chi. Sou. Varsha — Wedding Invitation" },
+      { name: "twitter:title", content: "Chi. Gireesh & Chi. La. Sow. Sri Varsha — Wedding Invitation" },
       {
         name: "twitter:description",
         content:
