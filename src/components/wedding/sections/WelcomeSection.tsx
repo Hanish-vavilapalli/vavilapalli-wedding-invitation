@@ -38,12 +38,16 @@ export function WelcomeSection() {
         />
       </div>
       <Kicker>{wedding.heading}</Kicker>
-      <h1 className="mt-4 flex flex-col items-center justify-center gap-1.5 text-3xl min-[380px]:text-4xl sm:text-6xl font-black tracking-wide text-primary">
-        <span>{wedding.groom.name}</span>
-        <span className="font-serif italic text-gold text-2xl sm:text-3xl font-normal tracking-widest lowercase">
+      <h1 className="mt-4 flex flex-col items-center justify-center gap-1 text-primary">
+        <span className="text-2xl min-[360px]:text-[1.75rem] min-[420px]:text-3xl sm:text-5xl md:text-6xl font-black tracking-normal sm:tracking-wide">
+          {wedding.groom.name}
+        </span>
+        <span className="my-1 font-serif italic text-gold text-xl min-[360px]:text-2xl sm:text-3xl font-normal tracking-widest lowercase">
           weds
         </span>
-        <span>{wedding.bride.name}</span>
+        <span className="text-xl min-[360px]:text-[1.45rem] min-[400px]:text-[1.7rem] min-[440px]:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight sm:tracking-wide whitespace-nowrap">
+          {wedding.bride.name}
+        </span>
       </h1>
       <p className="mt-4 max-w-lg text-lg sm:text-2xl leading-relaxed text-foreground font-semibold">
         Together with our families, we joyfully invite you to bless us on our
