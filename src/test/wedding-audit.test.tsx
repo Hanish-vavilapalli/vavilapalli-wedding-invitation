@@ -119,7 +119,9 @@ describe("Wedding PNG asset audit", () => {
 
   it("wedding facts match the invitation exactly", () => {
     expect(wedding.groom.name).toBe("Chi. Gireesh");
+    expect(wedding.groom.shortName).toBe("Gireesh");
     expect(wedding.bride.name).toBe("Chi. Sou. Varsha");
+    expect(wedding.bride.shortName).toBe("Varsha");
     expect(wedding.heading).toBe("Vavilapalli Family's Wedding Invitation");
     expect(wedding.groom.father).toBe("Sri Vavilapalli Applaswami Naidu");
     expect(wedding.groom.mother).toBe("Smt. Chinnammadu");

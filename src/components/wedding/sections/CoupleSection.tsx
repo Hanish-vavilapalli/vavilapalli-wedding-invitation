@@ -14,13 +14,13 @@ export function CoupleSection() {
         className="mx-auto mt-4 h-auto w-64 sm:w-80 md:w-[380px] drop-shadow-md"
       />
       <h2 className="mt-4 text-4xl sm:text-6xl font-black text-primary">
-        {wedding.groom.name}
+        {wedding.groom.shortName}
       </h2>
       <p className="my-2 font-serif italic text-gold text-2xl sm:text-3xl tracking-widest lowercase font-normal">
         weds
       </p>
       <h2 className="text-4xl sm:text-6xl font-black text-primary">
-        {wedding.bride.name}
+        {wedding.bride.shortName}
       </h2>
       <Ornament />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 text-base sm:text-lg max-w-lg mx-auto py-2">

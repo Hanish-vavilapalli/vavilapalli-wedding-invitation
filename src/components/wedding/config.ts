@@ -78,11 +78,13 @@ export const wedding = {
   heading: "Vavilapalli Family's Wedding Invitation",
   groom: {
     name: "Chi. Gireesh",
+    shortName: "Gireesh",
     father: "Sri Vavilapalli Applaswami Naidu",
     mother: "Smt. Chinnammadu",
   },
   bride: {
     name: "Chi. Sou. Varsha",
+    shortName: "Varsha",
     father: "Sri Pogiri Laxmana Naidu",
     mother: "Smt. Usha Rani",
   },
