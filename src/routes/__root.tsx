@@ -123,13 +123,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Noto+Serif+Telugu:wght@400;500;600;700;800;900&family=Ramabhadra&display=swap",
       },
+      {
+        rel: "preload",
+        href: "/wedding_song.mp3",
+        as: "audio",
+        type: "audio/mpeg",
+      },
     ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
-});
+  });
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
@@ -138,6 +144,53 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        {/* Instantaneous background audio with zero buttons & infinite continuous loop */}
+        <audio
+          id="wedding-audio"
+          src="/wedding_song.mp3"
+          autoPlay
+          loop
+          playsInline
+          preload="auto"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var a = document.getElementById('wedding-audio');
+                if (!a) return;
+                a.volume = 1.0;
+                function p() {
+                  if (!a) return;
+                  if (a.paused) {
+                    var res = a.play();
+                    if (res !== undefined && typeof res.then === 'function') {
+                      res.then(function() {}).catch(function() {});
+                    }
+                  }
+                }
+                // Try immediate autoplay at 0ms
+                p();
+                document.addEventListener('DOMContentLoaded', p);
+                window.addEventListener('load', p);
+                window.addEventListener('pageshow', p);
+
+                // For browsers requiring touch gesture, any touch, scroll or pointer instantly triggers it
+                var evs = ['touchstart', 'touchend', 'touchmove', 'pointerdown', 'pointerup', 'click', 'scroll', 'wheel', 'keydown'];
+                evs.forEach(function(e) {
+                  window.addEventListener(e, p, { capture: true, passive: true });
+                });
+                document.addEventListener('visibilitychange', function() {
+                  if (!document.hidden && a.paused) { p(); }
+                });
+                a.addEventListener('ended', function() {
+                  a.currentTime = 0;
+                  p();
+                });
+              })();
+            `,
+          }}
+        />
         {children}
         <Scripts />
       </body>
