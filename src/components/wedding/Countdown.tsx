@@ -36,25 +36,35 @@ export function Countdown() {
   }, [target]);
 
   return (
-    <div className="flex items-center justify-center gap-3 sm:gap-7 py-3">
-      {UNITS.map((unit, i) => (
-        <div key={unit.key} className="flex items-center gap-3 sm:gap-7">
-          <div className="text-center px-1.5">
-            <div
-              data-countdown={unit.key}
-              className="text-4xl font-black tabular-nums text-primary sm:text-6xl"
-            >
-              {left === null ? "–" : String(left[unit.key]).padStart(2, "0")}
+    <div className="w-full max-w-sm sm:max-w-xl mx-auto px-1 py-3">
+      <div className="flex items-center justify-center gap-1.5 min-[360px]:gap-2.5 min-[420px]:gap-4 sm:gap-7">
+        {UNITS.map((unit, i) => (
+          <div
+            key={unit.key}
+            className="flex items-center gap-1.5 min-[360px]:gap-2.5 min-[420px]:gap-4 sm:gap-7"
+          >
+            <div className="text-center min-w-[50px] min-[360px]:min-w-[58px] sm:min-w-[76px]">
+              <div
+                data-countdown={unit.key}
+                className="text-2xl min-[360px]:text-3xl min-[420px]:text-4xl sm:text-6xl font-black tabular-nums text-primary tracking-tight"
+              >
+                {left === null ? "–" : String(left[unit.key]).padStart(2, "0")}
+              </div>
+              <div className="mt-1 text-[10px] min-[360px]:text-xs sm:text-base uppercase tracking-wider text-gold font-bold">
+                {unit.label}
+              </div>
             </div>
-            <div className="mt-1 text-sm uppercase tracking-[0.2em] text-gold sm:text-base font-bold">
-              {unit.label}
-            </div>
+            {i < UNITS.length - 1 && (
+              <span
+                className="text-gold/60 font-serif text-lg min-[360px]:text-xl sm:text-4xl -mt-4 sm:-mt-5 select-none"
+                aria-hidden="true"
+              >
+                :
+              </span>
+            )}
           </div>
-          {i < UNITS.length - 1 && (
-            <span className="text-gold/60 font-serif text-3xl sm:text-4xl -mt-5 select-none">:</span>
-          )}
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

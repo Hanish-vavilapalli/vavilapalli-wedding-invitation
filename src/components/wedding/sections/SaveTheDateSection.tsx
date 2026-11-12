@@ -11,17 +11,17 @@ export function SaveTheDateSection() {
       <h2 className="mt-3 text-4xl font-extrabold text-primary sm:text-5xl">
         {wedding.dateLong}
       </h2>
-      <div className="mt-6 flex items-center justify-center gap-5 sm:gap-10">
+      <div className="mt-6 flex items-center justify-center gap-3 min-[360px]:gap-5 sm:gap-10">
         {wedding.dateBoxes.map((box, i) => (
-          <div key={box.label} className="flex items-center gap-5 sm:gap-10">
+          <div key={box.label} className="flex items-center gap-3 min-[360px]:gap-5 sm:gap-10">
             <div className="text-center">
-              <div className="text-5xl sm:text-7xl font-black text-primary tracking-wide">{box.value}</div>
-              <div className="mt-1 text-sm sm:text-base uppercase tracking-[0.25em] text-gold font-bold">
+              <div className="text-4xl min-[360px]:text-5xl sm:text-7xl font-black text-primary tracking-wide">{box.value}</div>
+              <div className="mt-1 text-xs sm:text-base uppercase tracking-[0.2em] text-gold font-bold">
                 {box.label}
               </div>
             </div>
             {i < wedding.dateBoxes.length - 1 && (
-              <span className="text-4xl sm:text-5xl text-gold/60 font-light select-none">/</span>
+              <span className="text-3xl sm:text-5xl text-gold/60 font-light select-none">/</span>
             )}
           </div>
         ))}
