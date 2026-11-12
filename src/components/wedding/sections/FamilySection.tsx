@@ -9,7 +9,7 @@ export function FamilySection() {
       <Kicker>Invited With Love</Kicker>
       <img
         src={assets.coupleGreeting}
-        alt="Groom and Bride welcoming with folded hands"
+        alt="Groom's Parents — Sri Vavilapalli Applaswami Naidu & Smt. Chinnammadu"
         loading="lazy"
         className="mx-auto mt-4 h-auto w-72 sm:w-88 md:w-[400px] drop-shadow-md"
       />
