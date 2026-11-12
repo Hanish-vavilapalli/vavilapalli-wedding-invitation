@@ -18,8 +18,12 @@ export function BlessingsSection() {
       </Telugu>
       <Ornament />
       <Kicker>Thank You for Being Part of Our Happiness</Kicker>
-      <h2 className="mt-3 text-5xl font-black tracking-wide text-primary sm:text-6xl">
-        {wedding.groom.name} <span className="font-serif italic text-gold text-4xl sm:text-5xl mx-2 font-normal">&</span> {wedding.bride.name}
+      <h2 className="mt-3 flex flex-col items-center justify-center gap-1 text-4xl sm:text-6xl font-black tracking-wide text-primary">
+        <span>{wedding.groom.name}</span>
+        <span className="font-serif italic text-gold text-3xl sm:text-4xl font-normal">
+          &amp;
+        </span>
+        <span>{wedding.bride.name}</span>
       </h2>
       <p className="mt-3 text-lg sm:text-2xl font-bold text-foreground">
         Share this invitation with your family and friends.

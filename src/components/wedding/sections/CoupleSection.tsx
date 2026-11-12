@@ -13,13 +13,13 @@ export function CoupleSection() {
         loading="lazy"
         className="mx-auto mt-4 h-auto w-64 sm:w-80 md:w-[380px] drop-shadow-md"
       />
-      <h2 className="mt-4 text-5xl sm:text-6xl font-black text-primary">
+      <h2 className="mt-4 text-4xl sm:text-6xl font-black text-primary">
         {wedding.groom.name}
       </h2>
-      <p className="my-2 font-serif italic text-gold text-xl sm:text-2xl tracking-[0.25em] uppercase font-bold">
+      <p className="my-2 font-serif italic text-gold text-2xl sm:text-3xl tracking-widest lowercase font-normal">
         weds
       </p>
-      <h2 className="text-5xl sm:text-6xl font-black text-primary">
+      <h2 className="text-4xl sm:text-6xl font-black text-primary">
         {wedding.bride.name}
       </h2>
       <Ornament />
