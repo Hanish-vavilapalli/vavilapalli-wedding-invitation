@@ -18,6 +18,14 @@ export function WelcomeSection() {
       <Telugu className="mt-4 text-2xl sm:text-3xl font-extrabold tracking-wider text-primary">
         {wedding.greetingTelugu}
       </Telugu>
+      {/* Auspicious Sacred Blessings Ribbon — stylish, compact & unique traditional pill */}
+      <div className="mt-2.5 inline-flex items-center justify-center gap-2 rounded-full border border-gold/40 bg-gradient-to-r from-gold/5 via-gold/15 to-gold/5 px-4 py-1 shadow-xs">
+        <span className="text-gold text-xs select-none" aria-hidden="true">❖</span>
+        <Telugu className="text-xs sm:text-sm font-extrabold tracking-widest text-vermilion">
+          శ్రీరస్తు &bull; శుభమస్తు &bull; కళ్యాణమస్తు
+        </Telugu>
+        <span className="text-gold text-xs select-none" aria-hidden="true">❖</span>
+      </div>
       <Ornament />
       {/* Grand Cinematic Movie Title Card Image: వావిలపల్లి వారి కళ్యాణ మహోత్సవం */}
       <div className="relative my-4 sm:my-6 flex w-full max-w-xl items-center justify-center select-none overflow-visible">
