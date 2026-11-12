@@ -14,7 +14,7 @@ export function FamilySection() {
         className="mx-auto mt-4 h-auto w-72 sm:w-88 md:w-[400px] drop-shadow-md"
       />
       <div className="mt-5 space-y-4 text-base sm:text-lg max-w-xl mx-auto">
-        <div className="rounded-2xl bg-gold/5 border border-gold/30 p-4 sm:p-2 sm:bg-transparent sm:border-0">
+        <div className="rounded-2xl bg-gold/5 border border-gold/30 p-4 sm:p-5">
           <p className="text-xl sm:text-3xl font-black text-primary">
             {wedding.groom.father} & {wedding.groom.mother}
           </p>
@@ -23,13 +23,13 @@ export function FamilySection() {
           </p>
         </div>
         <Ornament />
-        <div className="rounded-2xl bg-gold/5 border border-gold/30 p-4 sm:p-2 sm:bg-transparent sm:border-0">
-          <p className="text-xl sm:text-3xl font-black text-primary">
-            {wedding.bride.father} & {wedding.bride.mother}
+        <div className="rounded-2xl bg-gold/5 border border-gold/30 p-4 sm:p-5">
+          <p className="text-xs sm:text-sm uppercase tracking-widest text-gold font-bold mb-2">
+            With Best Compliments • బంధుమిత్రుల అభినందనలు
           </p>
-          <p className="mt-1.5 text-xs sm:text-sm uppercase tracking-widest text-gold font-bold">
-            Parents of the Bride
-          </p>
+          <Telugu className="text-base sm:text-xl font-bold leading-relaxed text-primary">
+            {wedding.complimentsTelugu}
+          </Telugu>
         </div>
       </div>
       <Ornament />
