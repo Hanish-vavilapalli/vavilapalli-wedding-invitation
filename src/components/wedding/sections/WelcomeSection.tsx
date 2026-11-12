@@ -39,7 +39,7 @@ export function WelcomeSection() {
       </div>
       <Kicker>{wedding.heading}</Kicker>
       <h1 className="mt-3 text-5xl sm:text-6xl font-black tracking-wide text-primary">
-        Gireesh <span className="font-serif italic text-gold text-4xl sm:text-5xl mx-2 font-normal">weds</span> Sri Varsha
+        {wedding.groom.name} <span className="font-serif italic text-gold text-4xl sm:text-5xl mx-2 font-normal">weds</span> {wedding.bride.name}
       </h1>
       <p className="mt-4 max-w-lg text-lg sm:text-2xl leading-relaxed text-foreground font-semibold">
         Together with our families, we joyfully invite you to bless us on our

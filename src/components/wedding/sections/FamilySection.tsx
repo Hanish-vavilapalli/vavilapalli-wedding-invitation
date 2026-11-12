@@ -34,8 +34,9 @@ export function FamilySection() {
       </div>
       <Ornament />
       <Telugu className="text-lg sm:text-2xl leading-relaxed text-foreground font-black max-w-lg mx-auto">
-        మా కుమారుడి వివాహ మహోత్సవానికి మీరు సకుటుంబ సపరివార సమేతంగా విచ్చేసి
-        వధూవరులను ఆశీర్వదించవలసి వినంతి.
+        మా కుమారుడి వివాహ మహోత్సవానికి మీరు సకుటుంబ సమేతంగా విచ్చేసి
+        వధూవరులను ఆశీర్వదించి ఆశీర్వచనాలు అందించవలసిందిగా మనస్ఫూర్తిగా
+        కోరుకుంటున్నాము.
       </Telugu>
       <p className="mt-3 text-base sm:text-xl italic text-foreground/85 font-semibold max-w-lg mx-auto">
         We request the honour of your presence with your family to bless the

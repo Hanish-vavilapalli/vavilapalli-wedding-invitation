@@ -25,11 +25,11 @@ export function LunchSection() {
       <p className="text-xl sm:text-3xl font-extrabold text-primary">{wedding.lunch.at}</p>
       <Ornament />
       <p className="text-lg sm:text-2xl leading-relaxed text-foreground font-semibold max-w-lg mx-auto">
-        Join us for a traditional wedding feast served with love, immediately
-        after the muhurtham.
+        Join us for a traditional wedding feast, served with love, following
+        the wedding ceremony.
       </p>
       <Telugu className="mt-3 text-lg sm:text-2xl font-black text-primary max-w-lg mx-auto">
-        వివాహ భోజనానికి మీరు సకుటుంబ సపరివార సమేతంగా విచ్చేయవలసి వినంతి.
+        వివాహ భోజనానికి మీరు సకుటుంబ సమేతంగా విచ్చేయవలసిందిగా వినతి.
       </Telugu>
     </SectionShell>
   );

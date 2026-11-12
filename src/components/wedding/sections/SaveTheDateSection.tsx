@@ -30,7 +30,7 @@ export function SaveTheDateSection() {
       {/* Auspicious Muhurtham Time - Grand & Clearly Visible to All */}
       <div className="my-4 inline-flex flex-col items-center justify-center rounded-2xl border-2 border-gold/60 bg-gold/15 px-8 py-5 shadow-md">
         <span className="text-sm sm:text-base font-black uppercase tracking-[0.25em] text-gold">
-          Auspicious Muhurtham
+          Auspicious Muhurtham:
         </span>
         <span className="mt-1 text-4xl sm:text-6xl font-black tracking-wide text-vermilion">
           {wedding.muhurtham}
@@ -51,7 +51,7 @@ export function SaveTheDateSection() {
         </div>
       </dl>
       <Telugu className="mt-4 text-lg sm:text-2xl font-black text-primary">
-        ముహూర్తం: ఉదయం {wedding.muhurtham} • సేతాభిష నక్షత్రం • ధనుర్ లగ్నం
+        ముహూర్తం: ఉదయం {wedding.muhurtham} • శతభిష నక్షత్రం • ధనుర్ లగ్నం
       </Telugu>
       <div className="mt-6">
         <Countdown />

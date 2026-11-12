@@ -75,14 +75,14 @@ export const ceremonies = [
 export const wedding = {
   greetingTelugu: "శ్రీ విఘ్నేశ్వరాయ నమః",
   blessingsTelugu: "శ్రీరస్తు శుభమస్తు కళ్యాణమస్తు",
-  heading: "Vavilapalli's Wedding Invitation",
+  heading: "Vavilapalli Family's Wedding Invitation",
   groom: {
     name: "Chi. Gireesh",
     father: "Sri Vavilapalli Applaswami Naidu",
     mother: "Smt. Chinnammadu",
   },
   bride: {
-    name: "Sri Varsha",
+    name: "Chi. Sou. Varsha",
     father: "Sri Pogiri Laxmana Naidu",
     mother: "Smt. Usha Rani",
   },
@@ -93,7 +93,7 @@ export const wedding = {
     { value: "26", label: "YEAR" },
   ],
   muhurtham: "8:03 AM",
-  nakshatra: "Sethabhisha Nakshatra",
+  nakshatra: "Shatabhisha Nakshatra",
   lagnam: "Dhanur Lagnam",
   venue: {
     title: "VENUE",
@@ -106,7 +106,7 @@ export const wedding = {
     title: "LUNCH INVITATION",
     date: "16 December 2026",
     time: "12:00 Noon Onwards",
-    at: "At the Marriage Venue.",
+    at: "At the Wedding Venue.",
   },
   /** Muhurtham instant in IST (UTC+5:30), used by the live countdown. */
   muhurthamISO: "2026-12-16T08:03:00+05:30",

@@ -4,10 +4,7 @@ import { Check, Copy, MessageCircle, Share2 } from "lucide-react";
 import { wedding } from "./config";
 
 function shareMessage(url: string) {
-  return `${wedding.groom.name.replace("Chi. ", "")} & ${wedding.bride.name.replace(
-    "Sri ",
-    "",
-  )} — ${wedding.dateLong}, Muhurtham ${wedding.muhurtham}. You are warmly invited! ${url}`;
+  return `${wedding.groom.name} & ${wedding.bride.name} — ${wedding.dateLong}, Auspicious Muhurtham: ${wedding.muhurtham}. You are warmly invited! ${url}`;
 }
 
 const btn =
@@ -50,30 +47,37 @@ export function ShareInvitation() {
         href={`https://wa.me/?text=${encodeURIComponent(shareMessage(url))}`}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Share on WhatsApp"
       >
         <MessageCircle className="size-4" />
         WhatsApp
       </a>
-      <button
-        type="button"
-        className={btn}
-        onClick={() => {
-          if (navigator.share) {
-            navigator
-              .share({ title: "Wedding Invitation", text: shareMessage(""), url })
-              .catch(() => {});
-          } else {
-            copyLink();
-          }
-        }}
-      >
-        <Share2 className="size-4" />
-        Share
-      </button>
-      <button type="button" className={btn} onClick={copyLink}>
-        {copied ? <Check className="size-4" /> : <Copy className="size-4" />}
-        {copied ? "Copied!" : "Copy Link"}
-      </button>
+      <div className="inline-flex items-center gap-2">
+        <button
+          type="button"
+          className={btn}
+          aria-label="Share Invitation"
+          onClick={() => {
+            if (navigator.share) {
+              navigator
+                .share({ title: "Wedding Invitation", text: shareMessage(""), url })
+                .catch(() => {});
+            } else {
+              copyLink();
+            }
+          }}
+        >
+          <Share2 className="size-4" />
+          Share
+        </button>
+        <span className="text-gold/60 font-bold select-none text-xl px-1" aria-hidden="true">
+          |
+        </span>
+        <button type="button" className={btn} onClick={copyLink} aria-label="Copy Invitation Link">
+          {copied ? <Check className="size-4" /> : <Copy className="size-4" />}
+          {copied ? "Copied!" : "Copy Link"}
+        </button>
+      </div>
     </div>
   );
 }

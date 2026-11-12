@@ -7,7 +7,7 @@ export function CeremonySection() {
   return (
     <SectionShell id="ceremonies">
       <Kicker>Wedding Ceremonies</Kicker>
-      <Telugu className="mt-2 text-2xl sm:text-3xl text-primary font-black">మాంగల్య స్నేహ సంబంధాలు</Telugu>
+      <Telugu className="mt-2 text-2xl sm:text-3xl text-primary font-black">మంగళకరమైన వివాహ వేడుకలు</Telugu>
       <Ornament />
       <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-6 max-w-xl mx-auto">
         {ceremonies.map((c) => (

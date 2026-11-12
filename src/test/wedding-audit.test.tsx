@@ -119,7 +119,8 @@ describe("Wedding PNG asset audit", () => {
 
   it("wedding facts match the invitation exactly", () => {
     expect(wedding.groom.name).toBe("Chi. Gireesh");
-    expect(wedding.bride.name).toBe("Sri Varsha");
+    expect(wedding.bride.name).toBe("Chi. Sou. Varsha");
+    expect(wedding.heading).toBe("Vavilapalli Family's Wedding Invitation");
     expect(wedding.groom.father).toBe("Sri Vavilapalli Applaswami Naidu");
     expect(wedding.groom.mother).toBe("Smt. Chinnammadu");
     expect(wedding.bride.father).toBe("Sri Pogiri Laxmana Naidu");
@@ -127,10 +128,11 @@ describe("Wedding PNG asset audit", () => {
     expect(wedding.dateLong).toBe("Wednesday, 16 December 2026");
     expect(wedding.muhurtham).toBe("8:03 AM");
     expect(wedding.muhurthamISO).toBe("2026-12-16T08:03:00+05:30");
-    expect(wedding.nakshatra).toBe("Sethabhisha Nakshatra");
+    expect(wedding.nakshatra).toBe("Shatabhisha Nakshatra");
     expect(wedding.lagnam).toBe("Dhanur Lagnam");
     expect(wedding.venue.line2).toBe("Komiri Village,");
     expect(wedding.lunch.time).toBe("12:00 Noon Onwards");
+    expect(wedding.lunch.at).toBe("At the Wedding Venue.");
     expect(wedding.dateBoxes.map((b) => b.value)).toEqual(["16", "12", "26"]);
     expect(ceremonies.map((c) => c.en)).toEqual([
       "Gowri Pooja",
