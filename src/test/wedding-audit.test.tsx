@@ -135,6 +135,7 @@ describe("Wedding PNG asset audit", () => {
     expect(wedding.venue.line2).toBe("Komiri Village,");
     expect(wedding.lunch.time).toBe("12:00 Noon Onwards");
     expect(wedding.lunch.at).toBe("At the Wedding Venue.");
+    expect(wedding.complimentsTelugu).toContain("వావిలపల్లి సత్యంనాయుడు-నిర్మల దంపతులు");
     expect(wedding.complimentsTelugu).toContain("వావిలపల్లి బ్రదర్స్ మరియు బంధుమిత్రుల అభినందనలతో");
     expect(wedding.dateBoxes.map((b) => b.value)).toEqual(["16", "12", "26"]);
     expect(ceremonies.map((c) => c.en)).toEqual([
