@@ -1,92 +1,67 @@
-import { useEffect, useRef, useState } from "react";
-import { Music, Pause } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 import { wedding } from "./config";
 
 /**
- * Background wedding music player.
- * Automatically loops continuously. Attempts to start on first visitor interaction,
- * and can be toggled on/off at any time via the floating control button.
+ * Invisible, non-stop background wedding music.
+ * - Plays immediately upon website load.
+ * - If browser autoplay policy requires a user gesture, the very first touch/scroll anywhere triggers it.
+ * - Loops continuously non-stop for as long as the website is open.
+ * - Zero on/off buttons rendered; cannot be turned off by tapping anything.
  */
 export function MusicPlayer() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [playing, setPlaying] = useState(false);
 
   useEffect(() => {
     if (!wedding.audioUrl) return;
+
     const audio = new Audio(wedding.audioUrl);
     audio.loop = true;
     audio.preload = "auto";
     audioRef.current = audio;
 
-    // Start playback smoothly upon first guest tap / interaction on the invitation
-    const handleFirstInteraction = () => {
-      audio
-        .play()
-        .then(() => setPlaying(true))
-        .catch(() => {
-          // Autoplay restricted until direct button tap
-        });
-      removeListeners();
+    const playAudio = () => {
+      audio.play().catch(() => {
+        // Will trigger on the very first micro-gesture
+      });
     };
 
-    const removeListeners = () => {
-      window.removeEventListener("click", handleFirstInteraction);
-      window.removeEventListener("touchstart", handleFirstInteraction);
+    // 1. Instantaneous playback attempt immediately on load
+    playAudio();
+
+    // 2. Gesture listeners for mobile browsers that require user gesture
+    const handleGesture = () => {
+      playAudio();
     };
 
-    window.addEventListener("click", handleFirstInteraction, { once: true });
-    window.addEventListener("touchstart", handleFirstInteraction, { once: true });
+    window.addEventListener("touchstart", handleGesture, { passive: true });
+    window.addEventListener("touchend", handleGesture, { passive: true });
+    window.addEventListener("pointerdown", handleGesture, { passive: true });
+    window.addEventListener("click", handleGesture, { passive: true });
+    window.addEventListener("scroll", handleGesture, { passive: true });
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) {
+        playAudio();
+      }
+    });
+
+    // 3. Guarantee seamless infinite looping
+    audio.addEventListener("ended", () => {
+      audio.currentTime = 0;
+      playAudio();
+    });
 
     return () => {
-      removeListeners();
+      window.removeEventListener("touchstart", handleGesture);
+      window.removeEventListener("touchend", handleGesture);
+      window.removeEventListener("pointerdown", handleGesture);
+      window.removeEventListener("click", handleGesture);
+      window.removeEventListener("scroll", handleGesture);
       audio.pause();
       audioRef.current = null;
     };
   }, []);
 
-  if (!wedding.audioUrl) return null;
-
-  function toggle() {
-    const audio = audioRef.current;
-    if (!audio) return;
-    if (playing) {
-      audio.pause();
-      setPlaying(false);
-    } else {
-      audio
-        .play()
-        .then(() => setPlaying(true))
-        .catch(() => setPlaying(false));
-    }
-  }
-
-  return (
-    <button
-      type="button"
-      onClick={toggle}
-      aria-label={playing ? "Pause wedding music" : "Play wedding music"}
-      className={`fixed right-3 bottom-4 z-40 flex items-center gap-2 rounded-full border-2 border-gold/70 px-3.5 py-2 text-primary shadow-xl backdrop-blur-md transition-all hover:scale-105 active:scale-95 ${
-        playing
-          ? "bg-primary text-primary-foreground border-gold"
-          : "bg-background/95 hover:bg-accent text-primary"
-      }`}
-    >
-      {playing ? (
-        <>
-          <Pause className="size-4 text-gold" />
-          <span className="text-xs font-bold uppercase tracking-wider text-primary-foreground">
-            Pause Music
-          </span>
-        </>
-      ) : (
-        <>
-          <Music className="size-4 text-gold animate-bounce" />
-          <span className="text-xs font-bold uppercase tracking-wider text-primary">
-            Play Music
-          </span>
-        </>
-      )}
-    </button>
-  );
+  // Zero buttons rendered — non-stop invisible audio
+  return null;
 }
