@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { MusicPlayer } from "@/components/wedding/MusicPlayer";
+import { OpenInvitationGate } from "@/components/wedding/OpenInvitationGate";
 import { WeddingFrame } from "@/components/wedding/WeddingFrame";
 import { TempleWatermark } from "@/components/wedding/WeddingFrame";
 import { BlessingsSection } from "@/components/wedding/sections/BlessingsSection";
@@ -54,6 +55,8 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="grain-overlay relative min-h-[100svh] w-full overflow-x-clip bg-background">
+      {/* Royal welcome entrance envelope — unlocks unmuted sound on user tap */}
+      <OpenInvitationGate />
       {/* Faint temple watermark behind all content */}
       <TempleWatermark />
       {/* Fixed traditional decoration frame shared by every section */}
