@@ -44,6 +44,7 @@ export function MusicPlayer() {
 
     events.forEach((ev) => {
       window.addEventListener(ev, handleInteraction, { capture: true, passive: true });
+      document.addEventListener(ev, handleInteraction, { capture: true, passive: true });
     });
 
     const handleVisibility = () => {
@@ -56,6 +57,7 @@ export function MusicPlayer() {
     return () => {
       events.forEach((ev) => {
         window.removeEventListener(ev, handleInteraction, true);
+        document.removeEventListener(ev, handleInteraction, true);
       });
       document.removeEventListener("visibilitychange", handleVisibility);
     };

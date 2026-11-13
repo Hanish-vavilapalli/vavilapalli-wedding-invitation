@@ -160,6 +160,7 @@ function RootShell({ children }: { children: ReactNode }) {
                 var a = document.getElementById('wedding-audio');
                 if (!a) return;
                 a.volume = 1.0;
+                try { a.load(); } catch(e) {}
                 function p() {
                   if (!a) return;
                   if (a.paused) {
@@ -175,10 +176,11 @@ function RootShell({ children }: { children: ReactNode }) {
                 window.addEventListener('load', p);
                 window.addEventListener('pageshow', p);
 
-                // For browsers requiring touch gesture, any touch, scroll or pointer instantly triggers it
+                // For mobile browsers requiring a user gesture, any first micro-touch or scroll immediately fires audio with 0ms delay
                 var evs = ['touchstart', 'touchend', 'touchmove', 'pointerdown', 'pointerup', 'click', 'scroll', 'wheel', 'keydown'];
                 evs.forEach(function(e) {
                   window.addEventListener(e, p, { capture: true, passive: true });
+                  document.addEventListener(e, p, { capture: true, passive: true });
                 });
                 document.addEventListener('visibilitychange', function() {
                   if (!document.hidden && a.paused) { p(); }
