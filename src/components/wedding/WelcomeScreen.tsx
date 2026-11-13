@@ -205,22 +205,22 @@ export function WelcomeScreen() {
           </p>
         </div>
 
-        {/* 4. ROYAL ANTIQUE GOLD "OPEN INVITATION" BUTTON (61% - 77%) */}
+        {/* 4. ROYAL ANTIQUE GOLD "OPEN INVITATION" BUTTON (60.5% - 76.5%) */}
         <div
-          className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center justify-center w-[82%] max-w-[270px] z-20 pointer-events-auto"
+          className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center justify-center w-[88%] max-w-[290px] z-20 pointer-events-auto"
           style={{ top: "60.5%", height: "16%" }}
         >
           <button
             type="button"
             onClick={handleOpenInvitation}
-            className="anim-gold-breathe group relative flex w-full items-center justify-center gap-2.5 rounded-xl border-2 border-[#FFF5E5]/90 bg-gradient-to-r from-[#C49A45] via-[#F3CE72] to-[#C49A45] px-4 py-2.5 sm:py-3 shadow-[0_0_22px_rgba(243,206,114,0.5),inset_0_1px_2px_rgba(255,255,255,0.7)] ring-1 ring-[#9E7828] ring-offset-2 ring-offset-[#4A0010] transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+            className="anim-gold-breathe group relative flex w-full items-center justify-center gap-2 rounded-xl border-2 border-[#FFF5E5]/90 bg-gradient-to-r from-[#C49A45] via-[#F3CE72] to-[#C49A45] px-3.5 py-2.5 sm:py-3 shadow-[0_0_22px_rgba(243,206,114,0.5),inset_0_1px_2px_rgba(255,255,255,0.7)] ring-1 ring-[#9E7828] ring-offset-2 ring-offset-[#4A0010] transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
             aria-label="Open Wedding Invitation with Music"
           >
-            <DiyaLamp className="size-4 sm:size-5 transition-transform duration-300 group-hover:scale-110" />
-            <span className="font-heading font-serif text-xs sm:text-sm font-black tracking-[0.2em] uppercase text-[#3A050B]">
+            <DiyaLamp className="size-4 sm:size-5 transition-transform duration-300 group-hover:scale-110 shrink-0" />
+            <span className="font-heading font-serif text-[0.76rem] sm:text-sm font-black tracking-[0.16em] uppercase text-[#3A050B] whitespace-nowrap">
               OPEN INVITATION
             </span>
-            <DiyaLamp className="size-4 sm:size-5 transition-transform duration-300 group-hover:scale-110" />
+            <DiyaLamp className="size-4 sm:size-5 transition-transform duration-300 group-hover:scale-110 shrink-0" />
           </button>
 
           {/* Traditional Telugu Invitation subtext */}
@@ -234,21 +234,22 @@ export function WelcomeScreen() {
           </p>
         </div>
 
-        {/* 5. BRAND NEW HIGH-RESOLUTION TEMPLE ELEPHANTS & MUHURTHAM DATE (79% - 100%) */}
+        {/* 5. ROYAL TEMPLE ELEPHANTS IN CORNERS & MUHURTHAM DATE (77.5% - 100%) */}
         <div
           className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none"
-          style={{ height: "21%" }}
+          style={{ height: "22.5%" }}
         >
-          {/* Left Temple Elephant (Anchored to bottom left, standing proudly) */}
+          {/* Left Temple Elephant (Anchored in bottom left corner with front half & salute) */}
           <img
             src={templeElephantLeft}
             alt="Temple Elephant"
-            className="absolute bottom-0 left-0 h-full w-auto object-contain object-bottom drop-shadow-md"
+            className="absolute bottom-0 h-full w-auto object-contain object-bottom drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]"
+            style={{ left: "-23.5%" }}
             draggable={false}
           />
 
-          {/* Center Auspicious Muhurtham Date (Anchored in between elephants) */}
-          <div className="absolute bottom-2 sm:bottom-3 left-1/2 -translate-x-1/2 text-center whitespace-nowrap z-10 px-1">
+          {/* Center Auspicious Muhurtham Date (Anchored in wide open space between elephants) */}
+          <div className="absolute bottom-2.5 sm:bottom-3 left-1/2 -translate-x-1/2 text-center whitespace-nowrap z-10 px-1">
             <p className="text-[0.62rem] sm:text-[0.72rem] uppercase font-bold text-[#D6B36A] tracking-[0.2em]">
               {wedding.dateLong}
             </p>
@@ -257,11 +258,12 @@ export function WelcomeScreen() {
             </p>
           </div>
 
-          {/* Right Temple Elephant (Anchored to bottom right, standing proudly) */}
+          {/* Right Temple Elephant (Anchored in bottom right corner with front half & salute) */}
           <img
             src={templeElephantRight}
             alt="Temple Elephant"
-            className="absolute bottom-0 right-0 h-full w-auto object-contain object-bottom drop-shadow-md"
+            className="absolute bottom-0 h-full w-auto object-contain object-bottom drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)]"
+            style={{ right: "-23.5%" }}
             draggable={false}
           />
         </div>
