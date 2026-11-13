@@ -76,3 +76,4 @@ export function TempleMandala({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+

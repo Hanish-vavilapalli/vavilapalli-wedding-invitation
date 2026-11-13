@@ -107,3 +107,4 @@ export function TempleToranam({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
