@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
-import templeTopLace from "@/assets/wedding/temple_top_lace.webp";
-import templeMandala from "@/assets/wedding/temple_mandala.webp";
-import tirunamamKalyanam from "@/assets/wedding/tirunamam_kalyanam.webp";
 import templeElephantLeft from "@/assets/wedding/temple_elephant_left.webp";
 import templeElephantRight from "@/assets/wedding/temple_elephant_right.webp";
+import tirunamamKalyanam from "@/assets/wedding/tirunamam_kalyanam.webp";
 import { assets, wedding } from "./config";
+import { TempleMandala } from "./TempleMandala";
+import { TempleToranam } from "./TempleToranam";
 
-/** Traditional Brass Diya SVG with warm golden flame */
+/** Traditional Brass Diya SVG with warm glowing golden flame */
 function DiyaLamp({ className = "size-5" }: { className?: string }) {
   return (
     <svg
@@ -43,12 +43,18 @@ function DiyaLamp({ className = "size-5" }: { className?: string }) {
  * Traditional South Indian Hindu Wedding Welcome Screen.
  * Handcrafted in Tirumala temple aesthetic: Deep Temple Maroon (#4A0010) & Antique Gold (#C49A45).
  *
- * Pixel-perfect proportional layout:
- * - Top 0% - 10.5%: Traditional lace toranam
- * - Top 11% - 37%: Sacred rotating antique-gold mandala + High-res Tirunamam shield
- * - Top 38% - 58%: Sacred Telugu typography, blessings & couple names
- * - Top 61% - 76%: Antique gold "OPEN INVITATION" button with brass diyas
- * - Top 80% - 100%: Two decorated temple elephants standing tall at bottom left and right
+ * Developed purely from separate vector and high-resolution transparent assets:
+ * - Handcrafted vector Temple Toranam Lace Arch at top
+ * - Handcrafted vector 16-Petal Royal Lotus Mandala
+ * - High-resolution Tirunamam with Lord Srinivasa & Goddess Padmavathi Kanyadaanam
+ * - Sacred Telugu typography & Invocations
+ * - Royal Antique Gold "OPEN INVITATION" button with brass diya lamps
+ * - Beautiful newly generated high-resolution decorated temple elephants at bottom
+ *
+ * On tap:
+ * 1. Plays background wedding music via direct user gesture (100% unmuted on Android & iOS).
+ * 2. Triggers golden celebratory petal shower.
+ * 3. Smooth cinematic fade transition reveals the full existing wedding invitation intact.
  */
 export function WelcomeScreen() {
   const [isInvitationOpen, setIsInvitationOpen] = useState(false);
@@ -141,28 +147,18 @@ export function WelcomeScreen() {
           height: "min(100dvh, calc(100vw * 1024 / 494))",
         }}
       >
-        {/* 1. TOP TRADITIONAL LACE TORANAM ARCH (0% - 10.5%) */}
-        <div className="absolute top-0 left-0 right-0 z-10 pointer-events-none" style={{ height: "10.5%" }}>
-          <img
-            src={templeTopLace}
-            alt=""
-            className="w-full h-full object-contain object-top opacity-95"
-            draggable={false}
-          />
+        {/* 1. HANDCRAFTED VECTOR TOP TEMPLE TORANAM ARCH (0% - 11.5%) */}
+        <div className="absolute top-0 left-0 right-0 z-10 pointer-events-none" style={{ height: "11.5%" }}>
+          <TempleToranam className="w-full h-full" />
         </div>
 
-        {/* 2. CENTRAL MANDALA & TIRUNAMAM SHIELD (11% - 37%) */}
+        {/* 2. CENTRAL HANDCRAFTED MANDALA & HIGH-RES TIRUNAMAM SHIELD (12% - 37%) */}
         <div
           className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center z-10"
-          style={{ top: "11%", height: "26.5%", width: "70%" }}
+          style={{ top: "12%", height: "25%", width: "70%" }}
         >
-          {/* Subtle Rotating Antique Gold Mandala */}
-          <img
-            src={templeMandala}
-            alt=""
-            className="absolute h-[135%] w-auto aspect-square object-contain opacity-45 pointer-events-none animate-[spin_60s_linear_infinite]"
-            draggable={false}
-          />
+          {/* Handcrafted Vector 16-Petal Royal Lotus Mandala */}
+          <TempleMandala className="absolute h-[140%] w-auto aspect-square pointer-events-none animate-[spin_60s_linear_infinite]" />
 
           {/* High-Resolution Sacred Tirunamam Shield */}
           <img
@@ -173,10 +169,10 @@ export function WelcomeScreen() {
           />
         </div>
 
-        {/* 3. TELUGU TYPOGRAPHY, INVOCATIONS & COUPLE NAMES (38% - 58%) */}
+        {/* 3. TELUGU TYPOGRAPHY, INVOCATIONS & COUPLE NAMES (38% - 59%) */}
         <div
           className="absolute left-1/2 -translate-x-1/2 text-center w-[90%] z-10 flex flex-col items-center justify-center"
-          style={{ top: "38.5%", height: "19.5%" }}
+          style={{ top: "38%", height: "21%" }}
         >
           {/* Sacred Blessings */}
           <p className="font-telugu text-[0.68rem] sm:text-[0.8rem] font-semibold tracking-wider text-[#E5C158] leading-tight">
@@ -187,10 +183,10 @@ export function WelcomeScreen() {
           </p>
 
           {/* Family Kalyana Mahotsavam Title */}
-          <p className="font-telugu text-[0.78rem] sm:text-[0.92rem] font-semibold tracking-wide text-[#E5C158] opacity-95 mt-1 leading-tight">
+          <p className="font-telugu text-[0.8rem] sm:text-[0.95rem] font-semibold tracking-wide text-[#E5C158] opacity-95 mt-1.5 leading-tight">
             వావిలపల్లి వారి
           </p>
-          <h1 className="font-telugu text-[1.2rem] sm:text-[1.5rem] font-black text-[#FFF5E5] tracking-wider drop-shadow-md leading-tight mt-0.5">
+          <h1 className="font-telugu text-[1.25rem] sm:text-[1.55rem] font-black text-[#FFF5E5] tracking-wider drop-shadow-md leading-tight mt-0.5">
             కళ్యాణ మహోత్సవం
           </h1>
 
@@ -202,14 +198,14 @@ export function WelcomeScreen() {
           </div>
 
           {/* Couple Names */}
-          <p className="font-heading font-serif text-[0.82rem] sm:text-[1rem] font-bold text-[#FFF5E5] tracking-wide leading-tight whitespace-nowrap">
+          <p className="font-heading font-serif text-[0.84rem] sm:text-[1.02rem] font-bold text-[#FFF5E5] tracking-wide leading-tight whitespace-nowrap">
             {wedding.groom.name}{" "}
-            <span className="font-serif italic text-[0.7rem] sm:text-[0.82rem] font-normal text-[#D6B36A]">weds</span>{" "}
+            <span className="font-serif italic text-[0.7rem] sm:text-[0.84rem] font-normal text-[#D6B36A]">weds</span>{" "}
             {wedding.bride.name}
           </p>
         </div>
 
-        {/* 4. ANTIQUE GOLD "OPEN INVITATION" BUTTON (60% - 76%) */}
+        {/* 4. ROYAL ANTIQUE GOLD "OPEN INVITATION" BUTTON (61% - 77%) */}
         <div
           className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center justify-center w-[82%] max-w-[270px] z-20 pointer-events-auto"
           style={{ top: "60.5%", height: "16%" }}
@@ -238,12 +234,12 @@ export function WelcomeScreen() {
           </p>
         </div>
 
-        {/* 5. BOTTOM DECORATED TEMPLE ELEPHANTS & MUHURTHAM DATE (79% - 100%) */}
+        {/* 5. BRAND NEW HIGH-RESOLUTION TEMPLE ELEPHANTS & MUHURTHAM DATE (79% - 100%) */}
         <div
           className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none"
-          style={{ height: "20.5%" }}
+          style={{ height: "21%" }}
         >
-          {/* Left Temple Elephant (Anchored to bottom left) */}
+          {/* Left Temple Elephant (Anchored to bottom left, standing proudly) */}
           <img
             src={templeElephantLeft}
             alt="Temple Elephant"
@@ -261,7 +257,7 @@ export function WelcomeScreen() {
             </p>
           </div>
 
-          {/* Right Temple Elephant (Anchored to bottom right) */}
+          {/* Right Temple Elephant (Anchored to bottom right, standing proudly) */}
           <img
             src={templeElephantRight}
             alt="Temple Elephant"
