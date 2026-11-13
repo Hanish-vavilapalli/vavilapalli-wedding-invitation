@@ -144,11 +144,10 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        {/* Instantaneous background audio with zero buttons & infinite continuous loop */}
+        {/* Traditional wedding background audio — triggered by Open Invitation button */}
         <audio
           id="wedding-audio"
           src="/wedding_song.mp3"
-          autoPlay
           loop
           playsInline
           preload="auto"
@@ -161,33 +160,14 @@ function RootShell({ children }: { children: ReactNode }) {
                 if (!a) return;
                 a.volume = 1.0;
                 try { a.load(); } catch(e) {}
-                function p() {
-                  if (!a) return;
-                  if (a.paused) {
-                    var res = a.play();
-                    if (res !== undefined && typeof res.then === 'function') {
-                      res.then(function() {}).catch(function() {});
-                    }
-                  }
-                }
-                // Try immediate autoplay at 0ms
-                p();
-                document.addEventListener('DOMContentLoaded', p);
-                window.addEventListener('load', p);
-                window.addEventListener('pageshow', p);
-
-                // For mobile browsers requiring a user gesture, any first micro-touch or scroll immediately fires audio with 0ms delay
-                var evs = ['touchstart', 'touchend', 'touchmove', 'pointerdown', 'pointerup', 'click', 'scroll', 'wheel', 'keydown'];
-                evs.forEach(function(e) {
-                  window.addEventListener(e, p, { capture: true, passive: true });
-                  document.addEventListener(e, p, { capture: true, passive: true });
-                });
-                document.addEventListener('visibilitychange', function() {
-                  if (!document.hidden && a.paused) { p(); }
-                });
                 a.addEventListener('ended', function() {
                   a.currentTime = 0;
-                  p();
+                  a.play().catch(function() {});
+                });
+                document.addEventListener('visibilitychange', function() {
+                  if (!document.hidden && a.paused && window.__weddingAudioActive) {
+                    a.play().catch(function() {});
+                  }
                 });
               })();
             `,

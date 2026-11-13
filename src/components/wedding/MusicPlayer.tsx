@@ -3,12 +3,11 @@ import { useEffect } from "react";
 import { wedding } from "./config";
 
 /**
- * Invisible, non-stop background wedding music.
- * Coordinates with #wedding-audio rendered in RootShell.
- * - Starts playing immediately upon website load.
- * - If browser autoplay policy requires user interaction, the very first touch/scroll anywhere triggers it.
- * - Loops continuously non-stop for as long as the website is open.
- * - Zero on/off buttons rendered; cannot be turned off by tapping anything.
+ * Invisible, continuous background wedding music player.
+ * - Coordinates with #wedding-audio rendered in RootShell.
+ * - Triggered when guest taps "OPEN INVITATION" on the WelcomeScreen.
+ * - Loops infinitely for as long as the website is open.
+ * - Zero on/off buttons rendered on the main invitation so music never stops accidentally.
  */
 export function MusicPlayer() {
   useEffect(() => {
@@ -17,53 +16,31 @@ export function MusicPlayer() {
     const audio = document.getElementById("wedding-audio") as HTMLAudioElement | null;
     if (!audio) return;
 
-    const playAudio = () => {
-      if (audio.paused) {
-        audio.play().catch(() => {
-          // Handled on first micro-interaction if blocked by standalone mobile browser
-        });
+    const keepPlaying = () => {
+      const isActive =
+        typeof window !== "undefined" &&
+        Boolean((window as unknown as { __weddingAudioActive?: boolean }).__weddingAudioActive);
+      if (isActive && audio.paused) {
+        audio.play().catch(() => {});
       }
     };
 
-    // Ensure audio is playing on client mount
-    playAudio();
-
-    const handleInteraction = () => {
-      playAudio();
-    };
-
-    const events = [
-      "touchstart",
-      "touchend",
-      "touchmove",
-      "pointerdown",
-      "pointerup",
-      "click",
-      "scroll",
-    ];
-
-    events.forEach((ev) => {
-      window.addEventListener(ev, handleInteraction, { capture: true, passive: true });
-      document.addEventListener(ev, handleInteraction, { capture: true, passive: true });
-    });
-
+    // Keep playing seamlessly if user switches tabs and returns
     const handleVisibility = () => {
-      if (!document.hidden && audio.paused) {
-        playAudio();
+      if (!document.hidden) {
+        keepPlaying();
       }
     };
+
     document.addEventListener("visibilitychange", handleVisibility);
+    window.addEventListener("pageshow", keepPlaying);
 
     return () => {
-      events.forEach((ev) => {
-        window.removeEventListener(ev, handleInteraction, true);
-        document.removeEventListener(ev, handleInteraction, true);
-      });
       document.removeEventListener("visibilitychange", handleVisibility);
+      window.removeEventListener("pageshow", keepPlaying);
     };
   }, []);
 
-  // Zero buttons rendered — non-stop invisible audio
+  // Zero buttons rendered — clean and undisturbed invitation
   return null;
 }
-
